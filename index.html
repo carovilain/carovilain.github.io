@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login page</title>
+  <style>
+    body {
+      font-family: 'Figtree', sans-serif;
+      color: aliceblue;
+      background-color: rgb(38, 156, 174);
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    form {
+      display: inline-block;
+      text-align: left;
+    }
+
+    label {
+      font-size: 18px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="password"] {
+      background: transparent;
+      border: none;
+      color: white;
+      padding: 10px 5px;
+      font-size: 16px;
+      width: 250px;
+      outline: none;
+      box-sizing: border-box;
+      margin-bottom: 20px; /* space between input and button */
+    }
+
+    input[type="password"]::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    input[type="button"] {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 5px 8px;
+      border-radius: 400px;
+      transition: background-color 0.3s, color 0.3s;
+     text-align: center
+      width: 100%;
+      max-width: 250px;
+    }
+
+    input[type="button"]:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <input type="password" id="pswd" placeholder="Password" />
+    <input type="button" value="Submit" onclick="checkPswd();" />
+  </form>
+
+  <script type="text/javascript">
+    function checkPswd() {
+      var confirmPassword = "notthepassword";
+      var password = document.getElementById("pswd").value;
+      if (password === confirmPassword) {
+        window.location = "welcome.html";
+      } else {
+        alert("Passwords do not match.");
+      }
+    }
+  </script>
+</body>
+</html>
