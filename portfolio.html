@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Caro Vilain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400&display=swap" rel="stylesheet">
+  
+  <style>
+    * { box-sizing: border-box; }
+    
+    html, body {
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: "Figtree", sans-serif;
+    }
+
+    body {
+      color: #ffffff;
+      background: linear-gradient(160deg, #00b4d8 0%, #0077b6 100%);
+      background-attachment: fixed;
+      text-align: center;
+    }
+
+    nav {
+      width: 100%;
+      padding: 30px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 400;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.6;
+    }
+
+    .content {
+      margin-top: 60px;
+      padding: 20px;
+      max-width: 800px;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1 {
+      font-weight: 300;
+      font-size: 1.8rem;
+      margin: 0 0 10px 0;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 300;
+      margin-bottom: 60px;
+      font-size: 0.95rem;
+      display: block;
+    }
+
+    /* Portfolio Grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 60px 40px;
+    }
+
+    .project {
+      text-align: left;
+    }
+
+    .project-line {
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      margin-bottom: 15px;
+      height: 150px; /* Placeholder height for where images would go */
+      transition: border-bottom 0.3s ease;
+    }
+
+    .project:hover .project-line {
+      border-bottom: 1px solid white;
+    }
+
+    .project-title {
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .project-desc {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+      window.location.href = "index.html"; 
+    }
+  </script>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="content">
+    <h1>Portfolio</h1>
+    <span class="subtitle">In progress...</span>
+    
+    <div class="portfolio-grid">
+      <div class="project">
+        <div class="project-line"></div>
+        <span class="project-title">Project 01</span>
+        <span class="project-desc">Coming Soon</span>
+      </div>
+
+      <div class="project">
+        <div class="project-line"></div>
+        <span class="project-title">Project 02</span>
+        <span class="project-desc">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
