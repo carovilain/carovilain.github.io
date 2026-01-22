@@ -22,14 +22,14 @@
     nav { position: absolute; top: 0; width: 100%; padding: 30px; text-align: center; display: none; }
     nav a { color: white; text-decoration: none; margin: 0 12px; font-weight: 400; font-size: 0.9rem; letter-spacing: 0.5px; transition: opacity 0.3s; }
     .content { text-align: center; }
-    h1 { font-weight: 300; font-size: 1.8rem; margin: 0 0 40px 0; letter-spacing: 2px; }
+    h1 { font-weight: 300; font-size: 1.8rem; margin: 0 0 10px 0; letter-spacing: 2px; }
+    p { color: rgba(255, 255, 255, 0.7); font-weight: 300; margin-bottom: 40px; font-size: 0.95rem; }
     
     input[type="password"] {
       background: transparent; border: none; border-bottom: 1px solid rgba(255, 255, 255, 0.4);
       padding: 10px; color: white; font-family: "Figtree", sans-serif; font-size: 1rem;
       outline: none; width: 180px; text-align: center;
     }
-    /* Fixed: Placeholder set to white */
     input[type="password"]::placeholder {
       color: rgba(255, 255, 255, 0.7); 
     }
@@ -54,6 +54,8 @@
 
   <div class="content">
     <h1>Caro Vilain</h1>
+    <p>In progress...</p>
+    
     <div class="login-container">
       <input type="password" id="pw-input" placeholder="password">
       <button onclick="checkPassword()">Enter</button>
