@@ -1,69 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caro Vilain</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400&display=swap" rel="stylesheet">
   
   <style>
+    * { box-sizing: border-box; }
     html, body {
-      /* This ensures the gradient covers the full height even if content is short */
-      min-height: 100%;
+      height: 100%;
       margin: 0;
       padding: 0;
       font-family: "Figtree", sans-serif;
     }
 
     body {
-      color: white;
-      /* UPDATED GRADIENT: Brighter, more saturated teals */
+      color: #ffffff;
       background: linear-gradient(160deg, #00b4d8 0%, #0077b6 100%);
-      background-attachment: fixed; /* Keeps the gradient from repeating */
-      text-align: center;
-      font-weight: 400; 
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; /* Centers everything vertically initially */
     }
 
+    /* Navigation - Hidden by default */
     nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
       padding: 30px;
+      text-align: center;
+      display: none; /* Hidden until unlocked */
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 12px;
       font-weight: 400;
-      transition: opacity 0.3s;
+      font-size: 0.9rem;
       letter-spacing: 0.5px;
-    }
-
-    nav a:hover {
-      opacity: 0.6;
+      transition: opacity 0.3s;
     }
 
     .content {
-      padding-top: 60px;
+      text-align: center;
+      transition: all 0.5s ease;
     }
 
     h1 {
-      font-weight: 400; /* Re-lowered to 300 for that elegant look you liked */
-      font-size: 3.5rem;
-      margin-bottom: 10px;
+      font-weight: 300;
+      font-size: 1.8rem;
+      margin: 0 0 40px 0;
       letter-spacing: 2px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle depth */
     }
 
-    p {
-      color: rgba(255, 255, 255, 0.8);
-      font-weight: 300;
-      font-size: 1.2rem;
+    /* Minimalist Password - No Box */
+    input[type="password"] {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 10px;
+      color: white;
+      font-family: "Figtree", sans-serif;
+      font-size: 1rem;
+      outline: none;
+      width: 180px;
+      text-align: center;
+      transition: border-bottom 0.3s;
+    }
+
+    input[type="password"]:focus {
+      border-bottom: 1px solid white;
+    }
+
+    input[type="password"]::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Minimalist Button - No Box */
+    button {
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.6);
+      display: block;
+      margin: 20px auto;
+      cursor: pointer;
+      font-family: "Figtree", sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    button:hover {
+      color: white;
+    }
+
+    /* Class to show the nav and move content up */
+    .unlocked nav {
+      display: block;
+    }
+    
+    .unlocked {
+      justify-content: flex-start; /* Move content to top after login */
+      padding-top: 120px;
+    }
+    
+    .unlocked .login-container {
+      display: none; /* Hide login fields after success */
     }
   </style>
 </head>
-<body>
+<body id="page-body">
 
-  <nav>
+  <nav id="main-nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="portfolio.html">Portfolio</a>
@@ -72,8 +127,32 @@
 
   <div class="content">
     <h1>Caro Vilain</h1>
-    <p>Website in progress.</p>
+    
+    <div class="login-container" id="login-zone">
+      <input type="password" id="pw-input" placeholder="password">
+      <button onclick="checkPassword()">Enter</button>
+    </div>
   </div>
+
+  <script>
+    function checkPassword() {
+      const pw = document.getElementById('pw-input').value;
+      
+      // Replace "caro2026" with whatever password you want
+      if(pw === "caro2026") {
+        document.getElementById('page-body').classList.add('unlocked');
+        // Optional: Save login state for this session
+        sessionStorage.setItem('isLoggedIn', 'true');
+      } else {
+        alert("Incorrect");
+      }
+    }
+
+    // Keep it unlocked if they navigate back to home
+    if(sessionStorage.getItem('isLoggedIn') === 'true') {
+      document.getElementById('page-body').classList.add('unlocked');
+    }
+  </script>
   
 </body>
 </html>
