@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Caro Vilain</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Specific styles for this page's layout */
+    .content { 
+      margin-top: 60px; 
+      padding: 20px; 
+      max-width: 600px; 
+      width: 90%; 
+      margin-left: auto; 
+      margin-right: auto; 
+      text-align: center;
+    }
+
+    h1 { 
+      font-weight: 300; 
+      font-size: 1.8rem; 
+      margin: 0 0 10px 0; 
+      letter-spacing: 1px; 
+    }
+
+    .subtitle { 
+      color: rgba(255, 255, 255, 0.7); 
+      font-weight: 300; 
+      margin-bottom: 50px; 
+      font-size: 0.95rem; 
+      display: block; 
+    }
+
+    .bio-text {
+      font-weight: 300;
+      line-height: 1.8;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.3px;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+      window.location.href = "index.html"; 
+    }
+  </script>
+
+  <nav style="display: block; position: relative;">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="content">
+    <h1>About</h1>
+    <span class="subtitle">In progress...</span>
+
+  
+</body>
+</html>
