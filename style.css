@@ -1,0 +1,37 @@
+/* style.css */
+* { box-sizing: border-box; }
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Figtree", sans-serif;
+}
+
+body {
+  color: #ffffff;
+  /* Change this ONE line to update the whole site */
+  background: linear-gradient(160deg, #00b4d8 0%, #0077b6 100%);
+  background-attachment: fixed;
+  text-align: center;
+}
+
+nav {
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  transition: opacity 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.6;
+}
