@@ -7,10 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <style>
+    /* CSS remains largely the same */
     * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; padding: 0; font-family: "Figtree", sans-serif; }
+    html, body { height: 100%; margin: 0; padding: 0; font-family: "Figtree", sans-serif; background-color: #111; color: white; }
     body {
       display: flex;
       flex-direction: column;
@@ -37,6 +37,7 @@
       letter-spacing: 2px; text-transform: uppercase;
     }
     
+    /* Reveal nav and hide login UI when unlocked */
     .unlocked nav { display: block; }
     .unlocked { justify-content: flex-start; padding-top: 120px; }
     .unlocked .login-container { display: none; }
@@ -52,9 +53,9 @@
 
   <div class="content">
     <h1>Caro Vilain</h1>
-    <p> Website In progress...</p>
     
     <div class="login-container">
+      <p>Website In progress...</p>
       <input type="password" id="pw-input" placeholder="password">
       <button onclick="checkPassword()">Enter</button>
     </div>
@@ -63,6 +64,7 @@
   <script>
     function checkPassword() {
       const pw = document.getElementById('pw-input').value;
+      // Change "notthepassword" to your actual password
       if(pw === "notthepassword") {
         document.getElementById('page-body').classList.add('unlocked');
         sessionStorage.setItem('isLoggedIn', 'true');
@@ -71,6 +73,7 @@
       }
     }
 
+    // Keep user logged in during the session
     if(sessionStorage.getItem('isLoggedIn') === 'true') {
       document.getElementById('page-body').classList.add('unlocked');
     }
