@@ -1,78 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login page</title>
+  <title>Caro Vilain</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  
   <style>
+    html, body {
+      /* This ensures the gradient covers the full height even if content is short */
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: "Figtree", sans-serif;
+    }
+
     body {
-      font-family: 'Figtree', sans-serif;
-      color: aliceblue;
-      background-color: rgb(38, 156, 174);
+      color: white;
+      /* UPDATED GRADIENT: Brighter, more saturated teals */
+      background: linear-gradient(160deg, #00b4d8 0%, #0077b6 100%);
+      background-attachment: fixed; /* Keeps the gradient from repeating */
       text-align: center;
-      padding-top: 100px;
+      font-weight: 400; 
     }
 
-    form {
-      display: inline-block;
-      text-align: left;
+    nav {
+      padding: 30px;
     }
 
-    label {
-      font-size: 18px;
-      display: block;
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 400;
+      transition: opacity 0.3s;
+      letter-spacing: 0.5px;
+    }
+
+    nav a:hover {
+      opacity: 0.6;
+    }
+
+    .content {
+      padding-top: 60px;
+    }
+
+    h1 {
+      font-weight: 400; /* Re-lowered to 300 for that elegant look you liked */
+      font-size: 3.5rem;
       margin-bottom: 10px;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle depth */
     }
 
-    input[type="password"] {
-      background: transparent;
-      border: none;
-      color: white;
-      padding: 10px 5px;
-      font-size: 16px;
-      width: 250px;
-      outline: none;
-      box-sizing: border-box;
-      margin-bottom: 20px; /* space between input and button */
-    }
-
-    input[type="password"]::placeholder {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    input[type="button"] {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      padding: 6px 15px;
-      border-radius: 400px;
-      transition: background-color 0.3s, color 0.3s;
-     text-align: center
-      width: 100%;
-      max-width: 250px;
-    }
-
-    input[type="button"]:hover {
-      background-color: rgba(255, 255, 255, 0.2);
+    p {
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 300;
+      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
-  <form>
-    <input type="password" id="pswd" placeholder="Password" />
-    <input type="button" value="Submit" onclick="checkPswd();" />
-  </form>
 
-  <script type="text/javascript">
-    function checkPswd() {
-      var confirmPassword = "notthepassword";
-      var password = document.getElementById("pswd").value;
-      if (password === confirmPassword) {
-        window.location = "welcome.html";
-      } else {
-        alert("Passwords do not match.");
-      }
-    }
-  </script>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="content">
+    <h1>Caro Vilain</h1>
+    <p>Website in progress.</p>
+  </div>
+  
 </body>
 </html>
