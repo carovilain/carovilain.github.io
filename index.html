@@ -7,16 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400&display=swap" rel="stylesheet">
-  
   <style>
     * { box-sizing: border-box; }
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      font-family: "Figtree", sans-serif;
-    }
-
+    html, body { height: 100%; margin: 0; padding: 0; font-family: "Figtree", sans-serif; }
     body {
       color: #ffffff;
       background: linear-gradient(160deg, #00b4d8 0%, #0077b6 100%);
@@ -24,100 +17,34 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center; /* Centers everything vertically initially */
+      justify-content: center;
     }
-
-    /* Navigation - Hidden by default */
-    nav {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      padding: 30px;
-      text-align: center;
-      display: none; /* Hidden until unlocked */
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: 400;
-      font-size: 0.9rem;
-      letter-spacing: 0.5px;
-      transition: opacity 0.3s;
-    }
-
-    .content {
-      text-align: center;
-      transition: all 0.5s ease;
-    }
-
-    h1 {
-      font-weight: 300;
-      font-size: 1.8rem;
-      margin: 0 0 40px 0;
-      letter-spacing: 2px;
-    }
-
-    /* Minimalist Password - No Box */
+    nav { position: absolute; top: 0; width: 100%; padding: 30px; text-align: center; display: none; }
+    nav a { color: white; text-decoration: none; margin: 0 12px; font-weight: 400; font-size: 0.9rem; letter-spacing: 0.5px; transition: opacity 0.3s; }
+    .content { text-align: center; }
+    h1 { font-weight: 300; font-size: 1.8rem; margin: 0 0 40px 0; letter-spacing: 2px; }
+    
     input[type="password"] {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-      padding: 10px;
-      color: white;
-      font-family: "Figtree", sans-serif;
-      font-size: 1rem;
-      outline: none;
-      width: 180px;
-      text-align: center;
-      transition: border-bottom 0.3s;
+      background: transparent; border: none; border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 10px; color: white; font-family: "Figtree", sans-serif; font-size: 1rem;
+      outline: none; width: 180px; text-align: center;
     }
-
-    input[type="password"]:focus {
-      border-bottom: 1px solid white;
-    }
-
+    /* Fixed: Placeholder set to white */
     input[type="password"]::placeholder {
-      color: rgba(255, 255, 255, 0.3);
+      color: rgba(255, 255, 255, 0.7); 
     }
-
-    /* Minimalist Button - No Box */
     button {
-      background: transparent;
-      border: none;
-      color: rgba(255, 255, 255, 0.6);
-      display: block;
-      margin: 20px auto;
-      cursor: pointer;
-      font-family: "Figtree", sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      transition: color 0.3s;
-    }
-
-    button:hover {
-      color: white;
-    }
-
-    /* Class to show the nav and move content up */
-    .unlocked nav {
-      display: block;
+      background: transparent; border: none; color: rgba(255, 255, 255, 0.8);
+      display: block; margin: 20px auto; cursor: pointer; font-size: 0.8rem;
+      letter-spacing: 2px; text-transform: uppercase;
     }
     
-    .unlocked {
-      justify-content: flex-start; /* Move content to top after login */
-      padding-top: 120px;
-    }
-    
-    .unlocked .login-container {
-      display: none; /* Hide login fields after success */
-    }
+    .unlocked nav { display: block; }
+    .unlocked { justify-content: flex-start; padding-top: 120px; }
+    .unlocked .login-container { display: none; }
   </style>
 </head>
 <body id="page-body">
-
   <nav id="main-nav">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -127,8 +54,7 @@
 
   <div class="content">
     <h1>Caro Vilain</h1>
-    
-    <div class="login-container" id="login-zone">
+    <div class="login-container">
       <input type="password" id="pw-input" placeholder="password">
       <button onclick="checkPassword()">Enter</button>
     </div>
@@ -137,22 +63,17 @@
   <script>
     function checkPassword() {
       const pw = document.getElementById('pw-input').value;
-      
-      // Replace "caro2026" with whatever password you want
-      if(pw === "caro2026") {
+      if(pw === "notthepassword") {
         document.getElementById('page-body').classList.add('unlocked');
-        // Optional: Save login state for this session
         sessionStorage.setItem('isLoggedIn', 'true');
-      } else {
-        alert("Incorrect");
+      } else { 
+        alert("Incorrect"); 
       }
     }
 
-    // Keep it unlocked if they navigate back to home
     if(sessionStorage.getItem('isLoggedIn') === 'true') {
       document.getElementById('page-body').classList.add('unlocked');
     }
   </script>
-  
 </body>
 </html>
