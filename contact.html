@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Caro Vilain</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    * { box-sizing: border-box; }
+    
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: "Figtree", sans-serif;
+    }
+
+    body {
+      color: #ffffff;
+      background: linear-gradient(160deg, #00b4d8 0%, #0077b6 100%);
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    nav {
+      width: 100%;
+      padding: 30px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 400;
+      font-size: 0.9rem; /* Lowered font size */
+      letter-spacing: 0.5px;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.6;
+    }
+
+    .content {
+      margin-top: 100px;
+      padding: 20px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h1 {
+      font-weight: 300;
+      font-size: 1.8rem; /* Lowered from 3rem */
+      margin: 0 0 10px 0;
+      letter-spacing: 1px;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 300;
+      margin-bottom: 50px;
+      font-size: 0.95rem; /* Lowered from 1.1rem */
+    }
+
+    .contact-item {
+      margin-bottom: 30px;
+    }
+
+    .contact-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.2rem; /* Lowered from 1.6rem */
+      font-weight: 300;
+      transition: opacity 0.3s ease;
+    }
+
+    .contact-link:hover {
+      opacity: 0.7;
+    }
+
+    .label {
+      display: block;
+      font-size: 0.65rem; /* Lowered for a cleaner look */
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="content">
+ 
+
+    <div class="contact-item">
+      <span class="label">Email</span>
+      <a href="mailto:carovilain@icloud.com" class="contact-link">carovilain@icloud.com</a>
+    </div>
+
+    <div class="contact-item">
+      <span class="label">Phone</span>
+      <a href="tel:+13102545683" class="contact-link">310.254.5683</a>
+    </div>
+  </div>
+  
+</body>
+</html>
