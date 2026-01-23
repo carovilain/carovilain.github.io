@@ -12,11 +12,10 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 85vh;
+      height: 80vh;
       text-align: center;
     }
 
-    /* Minimalist Input */
     input {
       background: transparent;
       border: none;
@@ -45,9 +44,6 @@
       transition: opacity 0.3s;
     }
 
-    .enter-trigger:hover { opacity: 1; }
-
-    /* The "In Progress" styling */
     .subtitle {
       color: rgba(255, 255, 255, 0.7);
       font-weight: 300;
@@ -63,11 +59,17 @@
       visibility: hidden;
     }
 
-    /* Utility to hide/show sections */
-    .hidden { display: none; }
+    .hidden { display: none !important; }
   </style>
 </head>
 <body>
+
+  <nav id="main-nav" class="hidden" style="display: block; position: relative;">
+
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
   <div class="login-wrapper">
     <h1>Caro Vilain</h1>
@@ -79,15 +81,24 @@
     </div>
 
     <div id="home-section" class="hidden">
-      <span class="subtitle">In Progress...</span>
+      <span class="subtitle">In progress...</span>
     </div>
   </div>
 
+  <footer>
+    <div class="footer-line"></div>
+    <p>© 2026 Caro Vilain</p>
+    <div class="footer-links">
+      <a href="mailto:carovilain@micloud.com">Email</a>
+      <a href="https://www.linkedin.com/in/caro-vilain-037748b7" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
   <script>
-    // Check status immediately when page loads
+    // Check if already logged in on load
     window.onload = function() {
       if (sessionStorage.getItem('isLoggedIn') === 'true') {
-        showHome();
+        showHomeState();
       }
     };
 
@@ -95,7 +106,8 @@
       const pw = document.getElementById('pwField').value;
       if (pw === 'notthepassword') { 
         sessionStorage.setItem('isLoggedIn', 'true');
-        showHome();
+        // SUCCESS: Redirects to ABOUT instead of Portfolio
+        window.location.href = "about.html";
       } else {
         const error = document.getElementById('error-msg');
         error.style.visibility = 'visible';
@@ -103,9 +115,11 @@
       }
     }
 
-    function showHome() {
+    // This handles the view if they click "Home" after they've already logged in
+    function showHomeState() {
       document.getElementById('login-section').classList.add('hidden');
       document.getElementById('home-section').classList.remove('hidden');
+      document.getElementById('main-nav').classList.remove('hidden');
     }
 
     document.getElementById("pwField").addEventListener("keyup", function(event) {
