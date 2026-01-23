@@ -63,14 +63,16 @@
       font-weight: 300;
     }
   </style>
+
+
 </head>
 <body>
-
-  <script>
-    if (sessionStorage.getItem('isLoggedIn') !== 'true') {
-      window.location.href = "index.html"; 
-    }
-  </script>
+    <script>
+  // If they aren't logged in, kick them back to the login page
+  if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+    window.location.href = "index.html"; 
+  }
+</script>
 
   <nav style="display: block; position: relative;">
     <a href="index.html">Home</a>
@@ -122,7 +124,7 @@
           <source src="https://res.cloudinary.com/dsrjoxnuz/video/upload/v1769120090/sonic_the_hedgehog_2___voiceover_day___paramount_100MB_wja4vj.mp4" type="video/mp4">
         </video>
         <span class="project-title">Paramount Studios</span>
-        <span class="project-desc">Editing.</span>
+        <span class="project-desc">Editing, motion graphics.</span>
       </div>
 
       <div class="project">
@@ -136,14 +138,14 @@
     </div>
   </div>
   
-</body>
+</div> </div> <footer>
+    <div class="footer-line"></div>
+    <p>© 2026 Caro Vilain</p>
+    <div class="footer-links">
+      <a href="mailto:carovilain@micloud.com">Email</a>
+      <a href="https://www.linkedin.com/in/caro-vilain-037748b7" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
 
-<footer>
-  <div class="footer-line"></div>
-  <p>© 2026 Caro Vilain</p>
-  <div class="footer-links">
-    <a href="mailto:carovilain@micloud.com">Email</a>
-    <a href="https://www.linkedin.com/in/caro-vilain-037748b7" target="_blank">LinkedIn</a>
-  </div>
-</footer>
+</body> </html>
 </html>
