@@ -4,25 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Caro Vilain</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="style.css">
-
   <style>
-    /* Specific styles for this page's layout */
     .content { 
       margin-top: 60px; 
       padding: 20px; 
       max-width: 600px; 
       width: 90%; 
-      margin-left: auto; 
-      margin-right: auto; 
+      margin: 0 auto; 
       text-align: center;
     }
-
     .subtitle { 
       color: rgba(255, 255, 255, 0.7); 
       font-weight: 300; 
@@ -30,17 +22,15 @@
       font-size: 0.95rem; 
       display: block; 
     }
-
-    .bio-text {
-      font-weight: 300;
-      line-height: 1.8;
-      font-size: 1rem;
-      color: rgba(255, 255, 255, 0.9);
-      letter-spacing: 0.3px;
-    }
   </style>
 </head>
 <body>
+
+  <script>
+    if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+      window.location.href = "index.html"; 
+    }
+  </script>
 
   <nav style="display: block; position: relative;">
     <a href="about.html">About</a>
@@ -51,15 +41,13 @@
   <div class="content">
     <h1>About</h1>
     <span class="subtitle">In progress...</span>
+  </div> <footer>
+    <div class="footer-line"></div>
+    <p>© 2026 Caro Vilain</p>
+    <div class="footer-links">
+      <a href="mailto:carovilain@micloud.com">Email</a>
+      <a href="https://www.linkedin.com/in/caro-vilain-037748b7" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
 
-  
-</body>
-  <footer>
-  <div class="footer-line"></div>
-  <p>© 2026 Caro Vilain</p>
-  <div class="footer-links">
-    <a href="mailto:carovilain@micloud.com">Email</a>
-    <a href="https://www.linkedin.com/in/caro-vilain-037748b7" target="_blank">LinkedIn</a>
-  </div>
-</footer>
-</html>
+</body> </html>
