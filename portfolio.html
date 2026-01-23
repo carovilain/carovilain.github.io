@@ -11,12 +11,13 @@
   
   <link rel="stylesheet" href="style.css">
 
-  <style>
+ <style>
     .content { 
       margin-top: 60px; 
       padding: 20px; 
-      max-width: 900px; 
-      width: 90%; 
+      /* Increased from 900px to 1200px to allow more room */
+      max-width: 1200px; 
+      width: 95%; 
       margin-left: auto; 
       margin-right: auto; 
     }
@@ -25,8 +26,18 @@
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      /* Increased min-width from 320px to 450px. 
+         This forces the videos to be larger and shifts to 
+         fewer columns (e.g., 2 columns instead of 3). */
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
       gap: 60px 40px;
+    }
+
+    /* Tablet/Mobile optimization: ensures videos don't overflow small screens */
+    @media (max-width: 500px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .project { text-align: left; }
@@ -90,7 +101,7 @@
       
 <div class="project">
   <video controls playsinline poster="https://res.cloudinary.com/dsrjoxnuz/image/upload/v1769126757/Webtoon_-_Creator_Residency_-_11.2025_-_v12_-_ProRes422_100MB_cs06im_poster.jpg">
-    <source src="https://player.cloudinary.com/embed/?cloud_name=dsrjoxnuz&public_id=Webtoon_-_Creator_Residency_-_11.2025_-_v12_-_ProRes422_100MB_cs06im" type="video/mp4">
+    <source src="https://res.cloudinary.com/dsrjoxnuz/video/upload/v1769120083/Webtoon_-_Creator_Residency_-_11.2025_-_v12_-_ProRes422_100MB_cs06im.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <span class="project-title">Webtoon</span>
