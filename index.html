@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-  
     .content { 
       margin-top: 60px; 
       padding: 20px; 
@@ -20,21 +19,25 @@
       width: 95%; 
       margin-left: auto; 
       margin-right: auto; 
-
     }
     h1 { font-weight: 300; font-size: 1.8rem; margin: 0 0 10px 0; letter-spacing: 1px; }
     .subtitle { color: rgba(255, 255, 255, 0.7); font-weight: 300; margin-bottom: 60px; font-size: 0.95rem; display: block; }
-
   </style>
 </head>
 <body>
 
-  <script>
-    if (sessionStorage.getItem('isLoggedIn') !== 'true') {
-      window.location.href = "index.html"; 
+<script>
+  function checkPassword() {
+    const pw = document.getElementById('pwField').value;
+    // Replace 'your-password' with the actual password you want
+    if (pw === 'CV2026') { 
+      sessionStorage.setItem('isLoggedIn', 'true');
+      window.location.href = "portfolio.html";
+    } else {
+      document.getElementById('error').style.display = 'block';
     }
-  </script>
-
+  }
+</script>
   <nav style="display: block; position: relative;">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -45,15 +48,13 @@
   <div class="content">
     <h1>Caro Vilain</h1>
     <span class="subtitle">In progress...</span>
+  </div> <footer>
+    <div class="footer-line"></div>
+    <p>© 2026 Caro Vilain</p>
+    <div class="footer-links">
+      <a href="mailto:carovilain@micloud.com">Email</a>
+      <a href="https://www.linkedin.com/in/caro-vilain-037748b7" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
 
-  
-</body>
-  <footer>
-  <div class="footer-line"></div>
-  <p>© 2026 Caro Vilain</p>
-  <div class="footer-links">
-    <a href="mailto:carovilain@micloud.com">Email</a>
-    <a href="https://www.linkedin.com/in/caro-vilain-037748b7" target="_blank">LinkedIn</a>
-  </div>
-</footer>
-</html>
+</body> </html>
