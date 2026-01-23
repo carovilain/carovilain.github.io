@@ -16,10 +16,11 @@
       text-align: center;
     }
 
+    /* Minimalist Input */
     input {
       background: transparent;
       border: none;
-      border-bottom: 1px solid #ffffff; /* Pure white line */
+      border-bottom: 1px solid #ffffff;
       color: #ffffff;
       font-family: 'Figtree', sans-serif;
       font-weight: 300;
@@ -32,11 +33,7 @@
       margin-bottom: 30px;
     }
 
-    /* Force placeholder to be pure white */
-    input::placeholder {
-      color: #ffffff;
-      opacity: 1;
-    }
+    input::placeholder { color: #ffffff; opacity: 1; }
 
     .enter-trigger {
       font-size: 0.8rem;
@@ -48,17 +45,26 @@
       transition: opacity 0.3s;
     }
 
-    .enter-trigger:hover {
-      opacity: 1;
+    .enter-trigger:hover { opacity: 1; }
+
+    /* The "In Progress" styling */
+    .subtitle {
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 300;
+      font-size: 0.95rem;
+      margin-top: 10px;
+      letter-spacing: 1px;
     }
 
     #error-msg {
       color: rgba(255, 255, 255, 0.5);
       font-size: 0.7rem;
       margin-top: 20px;
-      visibility: hidden; /* Keeps layout stable when error appears */
-      letter-spacing: 1px;
+      visibility: hidden;
     }
+
+    /* Utility to hide/show sections */
+    .hidden { display: none; }
   </style>
 </head>
 <body>
@@ -66,19 +72,30 @@
   <div class="login-wrapper">
     <h1>Caro Vilain</h1>
 
-    <input type="password" id="pwField" placeholder="Password" autocomplete="off">
-    <div class="enter-trigger" onclick="checkPassword()">Enter</div>
-    <p id="error-msg">Incorrect</p>
+    <div id="login-section">
+      <input type="password" id="pwField" placeholder="Password" autocomplete="off">
+      <div class="enter-trigger" onclick="checkPassword()">Enter</div>
+      <p id="error-msg">Incorrect</p>
+    </div>
+
+    <div id="home-section" class="hidden">
+      <span class="subtitle">In Progress...</span>
+    </div>
   </div>
 
   <script>
+    // Check status immediately when page loads
+    window.onload = function() {
+      if (sessionStorage.getItem('isLoggedIn') === 'true') {
+        showHome();
+      }
+    };
+
     function checkPassword() {
       const pw = document.getElementById('pwField').value;
-      
-      // Updated Password
       if (pw === 'notthepassword') { 
         sessionStorage.setItem('isLoggedIn', 'true');
-        window.location.href = "portfolio.html";
+        showHome();
       } else {
         const error = document.getElementById('error-msg');
         error.style.visibility = 'visible';
@@ -86,7 +103,11 @@
       }
     }
 
-    // Submit on Enter key press
+    function showHome() {
+      document.getElementById('login-section').classList.add('hidden');
+      document.getElementById('home-section').classList.remove('hidden');
+    }
+
     document.getElementById("pwField").addEventListener("keyup", function(event) {
       if (event.key === "Enter") { checkPassword(); }
     });
