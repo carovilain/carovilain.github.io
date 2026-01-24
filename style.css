@@ -3,6 +3,15 @@
 
   h1 { font-weight: 350; font-size: 1.8rem; margin: 0 0 10px 0; letter-spacing: 1px; }
   
+  p {
+    color: #ffffffda;
+    font-weight: 150;
+    font-size: small;
+    text-align: left;
+    line-height: 150%;
+    margin-top: 0px; /* Adjust this value for more or less breathing room */
+    margin-bottom: 10px; /* Optional: keeps spacing consistent at the bottom */
+  }
 html, body {
   min-height: 100%;
   margin: 0;
@@ -16,6 +25,8 @@ body {
   background: linear-gradient(160deg, #00b4d8 0%, #0077b6 100%);
   background-attachment: fixed;
   text-align: center;
+  padding: 0 7vw; /* Adds 5% of the screen width to the left and right */
+  box-sizing: border-box; /* Ensures padding doesn't create a horizontal scrollbar */
 }
 
 nav {
@@ -79,4 +90,36 @@ footer p {
 
 .footer-links a:hover {
   color: #fff;
+
+  
 }
+
+
+.content { 
+  margin-top: 60px; 
+  padding: 0 5%; /* Side breathing room */
+  max-width: 800px; /* Narrower width for easier reading */
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: center; /* Centers the Heading and Subtitle */
+}
+
+.about-container {
+  display:list-item;
+  gap: 50px;                /* Gap between image and text */
+  margin-top: 40px;
+}
+
+img.bio-pic {
+  width: 35% !important;    /* Proportional size so it can shrink */
+  flex-shrink: 0;           /* Prevents text from squeezing the image */
+  border-radius: 3%;
+  padding-bottom: 20%;
+}
+
+.bio-text {
+  flex: 1;                  /* Allows text to take up remaining space */
+  text-align: left;
+
+}
+
