@@ -6,7 +6,7 @@
   p {
     color: #ffffffda;
     font-weight: 150;
-    font-size: small;
+    font-size: medium;
     text-align: left;
     line-height: 150%;
     margin-top: 0px; /* Adjust this value for more or less breathing room */
@@ -91,11 +91,6 @@ footer p {
 padding-bottom: 10%;
 }
 
-.footer-links a:hover {
-  color: #fff;
-
-  
-}
 
 
 .content { 
@@ -108,7 +103,6 @@ padding-bottom: 10%;
 }
 
 .about-container {
-  display:list-item;
   gap: 50px;                /* Gap between image and text */
   margin-top: 40px;
 }
