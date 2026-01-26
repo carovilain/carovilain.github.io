@@ -19,24 +19,35 @@
       width: 95%; 
       margin-left: auto; 
       margin-right: auto; 
-
     }
     h1 { font-weight: 300; font-size: 1.8rem; margin: 0 0 10px 0; letter-spacing: 1px; }
     .subtitle { color: rgba(255, 255, 255, 0.7); font-weight: 300; margin-bottom: 60px; font-size: 0.95rem; display: block; }
 
+    /* The Grid Strategy */
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-      gap: 60px 40px;
+      grid-template-columns: repeat(2, 1fr); /* Two columns */
+      gap: 80px 40px;
     }
 
-    @media (max-width: 500px) {
+    /* Featured Project (Santa Monica) */
+    .project.featured {
+      grid-column: 1 / -1; /* Spans from column 1 to the end */
+      margin-bottom: 20px;
+    }
+
+    .project.featured .project-title {
+      font-size: 1.2rem; /* Larger title for featured project */
+    }
+
+    /* Mobile handling */
+    @media (max-width: 768px) {
       .portfolio-grid { grid-template-columns: 1fr; }
+      .project.featured { grid-column: auto; }
     }
 
     .project { text-align: left; }
 
-    /* Minimalist Video Player Protection */
     video {
       width: 100%;
       display: block;
@@ -44,7 +55,6 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
       outline: none;
       background: rgba(0, 0, 0, 0.1);
-      /* Prevent long-press on mobile */
       -webkit-touch-callout: none;
     }
 
@@ -61,10 +71,9 @@
       font-size: 0.8rem;
       color: rgba(255, 255, 255, 0.6);
       font-weight: 300;
+      line-height: 1.4;
     }
   </style>
-
-
 </head>
 <body>
 
@@ -76,40 +85,80 @@
 
   <div class="content">
     <h1>Portfolio</h1>
-    <span class="subtitle">More coming soon...</span>
+    <span class="subtitle">Selected Works</span>
     
     <div class="portfolio-grid">
       
-      <div class="project">
+      <div class="project featured">
         <video controls playsinline controlsList="nodownload" oncontextmenu="return false;" poster="https://res.cloudinary.com/dsrjoxnuz/image/upload/v1769126608/SM_Mobility_Info_Video_-_4.25_-_v4_100MB_sryssr_poster.jpg">
           <source src="https://res.cloudinary.com/dsrjoxnuz/video/upload/v1/SM_Mobility_Info_Video_-_4.25_-_v4_100MB_sryssr.mp4" type="video/mp4">
         </video>
-        <span class="project-title">City of Santa Monica</span>
-        <span class="project-desc">Writing, Directing, Producing, Editing, Motion Graphics.</span>
+        <span class="project-title">City of Santa Monica: Vision Zero</span>
+        <span class="project-desc">Creative Direction | Production | Editing<br>
+        Celebrating 10 years of infrastructure progress, highlighting active mobility and urban accessibility.</span>
       </div>
 
+
       <div class="project">
-        <video controls playsinline controlsList="nodownload" oncontextmenu="return false;" poster="https://res.cloudinary.com/dsrjoxnuz/image/upload/v1769126757/Webtoon_-_Creator_Residency_-_11.2025_-_v12_-_ProRes422_100MB_cs06im_poster.jpg">
-          <source src="https://res.cloudinary.com/dsrjoxnuz/video/upload/v1769120083/Webtoon_-_Creator_Residency_-_11.2025_-_v12_-_ProRes422_100MB_cs06im.mp4" type="video/mp4">
+        <video controls playsinline controlsList="nodownload" oncontextmenu="return false;" poster="https://res.cloudinary.com/dsrjoxnuz/image/upload/v1769459390/Webtoon_-_Creator_Residency_-_11.2025_-_9x16_-_v2_100MB_fcsiis_poster.jpg">
+          <source src="https://res.cloudinary.com/dsrjoxnuz/video/upload/v1769459249/Webtoon_-_Creator_Residency_-_11.2025_-_9x16_-_v2_100MB_fcsiis.mp4" type="video/mp4">
         </video>
         <span class="project-title">Webtoon</span>
-        <span class="project-desc">Editing, Motion Graphics.</span>
+        <span class="project-desc">Editing | Motion Graphics <br>
+        Promotion of the Creator Residency Program</span>
       </div>
-      
+
+          
+          <div class="project">
+        <video controls playsinline controlsList="nodownload" oncontextmenu="return false;" poster="https://res.cloudinary.com/dsrjoxnuz/image/upload/v1769461510/BBB_Bike_Month_Collab_-_5.25_-_v2_100MB_r4dlad_poster.png">
+          <source src="https://res.cloudinary.com/dsrjoxnuz/video/upload/v1769460781/BBB_Bike_Month_Collab_-_5.25_-_v2_100MB_r4dlad.mp4" type="video/mp4">
+        </video>
+        <span class="project-title">Big Blue Bus</span>
+        <span class="project-desc">Creative Direction | Editing <br>
+        Social Media Content for Bike Month 2025</span>
+      </div>
+
+
+  
       <div class="project">
         <video controls playsinline controlsList="nodownload" oncontextmenu="return false;" poster="https://res.cloudinary.com/dsrjoxnuz/image/upload/v1769126860/Housemarque_v8_FINAL_100MB_rdn6kv_poster.jpg">
           <source src="https://res.cloudinary.com/dsrjoxnuz/video/upload/v1769120083/Housemarque_v8_FINAL_100MB_rdn6kv.mp4" type="video/mp4">
         </video>
-        <span class="project-title">PlayStation Studios</span>
-        <span class="project-desc">Editing.</span>
+        <span class="project-title">Sony / PlayStation Studios</span>
+        <span class="project-desc">Editing <br>
+        Creating video profiles of PlayStation partners from around the workd.</span>
       </div>
+
       
       <div class="project">
         <video controls playsinline controlsList="nodownload" oncontextmenu="return false;" poster="https://res.cloudinary.com/dsrjoxnuz/image/upload/v1769126937/Google_Global_Keynote_-_Consumer_Impact_Reel_2021_-_v5_100MB_qqoneb_poster.jpg">
           <source src="https://res.cloudinary.com/dsrjoxnuz/video/upload/v1769120081/Google_Global_Keynote_-_Consumer_Impact_Reel_2021_-_v5_100MB_qqoneb.mp4" type="video/mp4">
         </video>
-        <span class="project-title">Google Global Keynote</span>
-        <span class="project-desc">Motion Graphics.</span>
+        <span class="project-title">Google</span>
+        <span class="project-desc">Motion Graphics<br>
+            Grpahics Presentation for a Google's Global Keynote
+        </span>
+      </div>
+
+    
+          <div class="project">
+        <video controls playsinline controlsList="nodownload" oncontextmenu="return false;" poster="https://res.cloudinary.com/dsrjoxnuz/image/upload/v1769460836/Measure_HLA_will_add_hundreds_of_miles_of_safety_improvements_for_pedestrians_but_what_might_th_a1d426_poster.jpg">
+          <source src="https://res.cloudinary.com/dsrjoxnuz/video/upload/v1769460699/Measure_HLA_will_add_hundreds_of_miles_of_safety_improvements_for_pedestrians_but_what_might_th_a1d426.mp4" type="video/mp4">
+        </video>
+        <span class="project-title">Streets For All</span>
+        <span class="project-desc">Creative Direction | Editing <br>
+        Social Media Campaign for Measure HLA</span>
+      </div>
+
+
+
+      <div class="project">
+        <video controls playsinline controlsList="nodownload" oncontextmenu="return false;" poster="https://res.cloudinary.com/dsrjoxnuz/image/upload/v1769461398/Why_do_YOU_love_Santa_Monica_santamonicaforward_hydrpe_poster.jpg">
+          <source src="https://res.cloudinary.com/dsrjoxnuz/video/upload/v1769461064/Why_do_YOU_love_Santa_Monica_santamonicaforward_hydrpe.mp4" type="video/mp4">
+        </video>
+        <span class="project-title">Santa Monica Forward</span>
+        <span class="project-desc">Creative Direction | Editing <br>
+        Social Media Content to promote a local advoacy organization.</span>
       </div>
 
       <div class="project">
@@ -117,21 +166,26 @@
           <source src="https://res.cloudinary.com/dsrjoxnuz/video/upload/v1769120090/sonic_the_hedgehog_2___voiceover_day___paramount_100MB_wja4vj.mp4" type="video/mp4">
         </video>
         <span class="project-title">Paramount Studios</span>
-        <span class="project-desc">Editing, Motion Graphics.</span>
+        <span class="project-desc">Editing | Motion Graphics
+            <br>
+            Promotion of the Sonic the Hedgehog movies.
+        </span>
       </div>
 
       <div class="project">
         <video controls playsinline controlsList="nodownload" oncontextmenu="return false;" poster="https://res.cloudinary.com/dsrjoxnuz/image/upload/v1769127590/virtual_press_junkets_reel_2024_100MB_a91a7e_poster.jpg">
           <source src="https://res.cloudinary.com/dsrjoxnuz/video/upload/v1769127509/virtual_press_junkets_reel_2024_100MB_a91a7e.mp4" type="video/mp4">
         </video>
-        <span class="project-title">Virtual Press Junkets Production</span>
-        <span class="project-desc">Production, Editing, Graphics.</span>
+        <span class="project-title">Virtual Press Junkets</span>
+        <span class="project-desc">Production | Editing | Graphics <br>
+            Virtual interviews for the promotion of a varietty of movies and shows.
+        </span>
       </div>
 
     </div>
   </div>
   
-</div> </div> <footer>
+  <footer>
     <div class="footer-line"></div>
     <p>© 2026 Caro Vilain</p>
     <div class="footer-links">
@@ -140,5 +194,5 @@
     </div>
   </footer>
 
-</body> </html>
+</body>
 </html>
