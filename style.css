@@ -39,6 +39,27 @@ html, body {
   font-family: "Figtree", sans-serif;
 }
 
+.sticky-name {
+  position: absolute;
+  top: 30px;         /* Matches the nav's top padding */
+  left: 7vw;         /* Matches your body padding so it aligns with your content edge */
+  font-weight: 350;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #ffffff;
+  line-height: 1;    /* Prevents extra spacing around the text */
+  margin: 0;
+  z-index: 10;
+}
+@media (max-width: 600px) {
+  .sticky-name {
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+  }
+}
+
 body {
   color: #ffffff;
   /* Change this ONE line to update the whole site */
@@ -51,10 +72,13 @@ body {
 
 nav {
   width: 100%;
-  padding: 30px;
+  padding: 30px 7vw; /* Top/Bottom 30px, Sides match your body padding */
   text-align: center;
+  display: flex;
+  justify-content: center; /* Keeps links centered */
+  align-items: center;     /* Vertically aligns items */
+  min-height: 1.5rem;      /* Matches the height scale of your name */
 }
-
 nav a {
   color: white;
   text-decoration: none;
