@@ -12,6 +12,26 @@
     margin-top: 0px; /* Adjust this value for more or less breathing room */
     margin-bottom: 10px; /* Optional: keeps spacing consistent at the bottom */
   }
+
+  /* This targets all links not already styled specifically elsewhere */
+a {
+  color: #ffffff; /* Or whatever color fits your brand */
+  text-decoration: underline; /* Keeps them recognizable as links */
+  text-underline-offset: 3px; /* Gives the underline some breathing room */
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover {
+  color: #00b4d8; /* A light blue from your gradient for a pop of color */
+  opacity: 0.8;
+  text-decoration: none; /* Optional: hides underline on hover */
+}
+
+/* Specific fix for links inside paragraphs to ensure they don't stay blue */
+p a {
+  color: inherit; /* Forces the link to take the same color as the paragraph text */
+  text-decoration-color: rgba(255, 255, 255, 0.4); /* Makes the underline subtle */
+}
 html, body {
   min-height: 100%;
   margin: 0;
