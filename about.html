@@ -1,128 +1,49 @@
-/* style.css */
-* { box-sizing: border-box; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Caro Vilain</title>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-  h1 { font-weight: 350; font-size: 1.8rem; margin: 0 0 10px 0; letter-spacing: 1px; }
-  
-  p {
-    color: #ffffffda;
-    font-weight: 150;
-    font-size: medium;
-    text-align: left;
-    line-height: 150%;
-    margin-top: 0px; /* Adjust this value for more or less breathing room */
-    margin-bottom: 10px; /* Optional: keeps spacing consistent at the bottom */
-  }
-html, body {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: "Figtree", sans-serif;
-}
+</head>
+<body>
 
-body {
-  color: #ffffff;
-  /* Change this ONE line to update the whole site */
-  background: linear-gradient(160deg, #00b4d8 0%, #0077b6 100%);
-  background-attachment: fixed;
-  text-align: center;
-  padding: 0 7vw; /* Adds 5% of the screen width to the left and right */
-  box-sizing: border-box; /* Ensures padding doesn't create a horizontal scrollbar */
-}
+  <script>
+    if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+      window.location.href = "index.html"; 
+    }
+  </script>
 
-nav {
-  width: 100%;
-  padding: 30px;
-  text-align: center;
-}
+  <nav style="display: block; position: relative;">
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="content">
+    <h1>About</h1>
+  <br>
+   
+    <div class="bio-text">
+        <p>Caro is a Visual Storyteller & Mobility Advocate based in Santa Monica, CA. Through her extensive knowledge of video editing and storytelling, she has worked on campaigns for clients including Paramount Studios, Netflix, DreamWorks, LA28, and Sony.</p>
+        <p>Living car-free in Los Angeles, she developed a passion for mobility advocacy and the many issues it intersects with. This led her to utilize her skills to amplify the messages of local advocacy organizations such as Streets For All, Santa Monica's Big Blue Bus, Streets Are For Everyone, and MoveLA.</p>
+        <p>Her background in marketing has also allowed her to work on social media campaigns for brands whose mission aligns with her passion for safe streets, including Lumos helmets and Wombi.</p>
+        <p>Caro is determined to use her skills to promote messages of equity, accessibility, and inclusivity.</p>
+      </div>
+       
+    <div class="about-container">
+      <img src="https://res.cloudinary.com/dsrjoxnuz/image/upload/v1769221675/4N1A1383_wgwg9x.jpg" alt="Caro Vilain" class="bio-pic">
+ 
+    </div>
+  </div>
+  <footer>
+    <div class="footer-line"></div>
+    <p>© 2026 Caro Vilain</p>
+    <div class="footer-links">
+      <a href="mailto:carovilain@icloud.com">Email</a>
+      <a href="https://www.linkedin.com/in/caro-vilain-037748b7" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
 
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 12px;
-  font-weight: 400;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-  transition: opacity 0.3s;
-}
-
-nav a:hover {
-  opacity: 0.6;
-}
-
-video {
-  transition: opacity 0.3s ease;
-  cursor: pointer;
-}
-
-video:hover {
-  filter: brightness(1.1);
-}
-
-footer p {
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 15px;
-  text-align: center; /* Add this line to center the copyright text */
-}
-
-.footer-line {
-  width: 40px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.3);
-  margin: 0 auto 30px auto;
-}
-
-footer p {
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 15px;
-}
-
-.footer-links a {
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-  font-size: 0.8rem;
-  margin: 0 10px;
-  transition: color 0.3s;
-padding-bottom: 10%;
-}
-
-.footer-links a:hover {
-  color: #fff;
-
-  
-}
-
-
-.content { 
-  margin-top: 60px; 
-  padding: 0 5%; /* Side breathing room */
-  max-width: 800px; /* Narrower width for easier reading */
-  margin-left: auto; 
-  margin-right: auto; 
-  text-align: center; /* Centers the Heading and Subtitle */
-}
-
-.about-container {
-  display:list-item;
-  gap: 50px;                /* Gap between image and text */
-  margin-top: 40px;
-}
-
-img.bio-pic {
-  width: 35% !important;    /* Proportional size so it can shrink */
-  flex-shrink: 0;           /* Prevents text from squeezing the image */
-  border-radius: 3%;
-  padding-bottom: 20%;
-}
-
-.bio-text {
-  flex: 1;                  /* Allows text to take up remaining space */
-  text-align: left;
-
-}
-
+</body> </html>
