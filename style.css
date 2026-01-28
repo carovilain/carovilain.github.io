@@ -164,3 +164,44 @@ img.bio-pic {
 
 }
 
+/* The Grid Strategy */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6-column base for maximum flexibility */
+  gap: 60px 30px;
+}
+
+/* 1. Featured (Full Width) */
+.project.featured {
+  grid-column: span 6; 
+  margin-bottom: 20px;
+}
+
+/* 2. Three Vertical Videos (Each takes 2 of the 6 columns) */
+.project.vertical {
+  grid-column: span 2;
+}
+
+/* 3. Two Horizontal Videos (Each takes 3 of the 6 columns) */
+.project.horizontal {
+  grid-column: span 3;
+}
+
+/* 4. The rest of the projects (Default back to 2-up or keep as needed) */
+.project {
+  grid-column: span 3; 
+}
+
+/* Mobile handling: Stack everything in 1 column */
+@media (max-width: 768px) {
+  .portfolio-grid { 
+    grid-template-columns: 1fr; 
+    gap: 40px;
+  }
+  .project.featured, 
+  .project.vertical, 
+  .project.horizontal, 
+  .project { 
+    grid-column: span 1; 
+  }
+}
