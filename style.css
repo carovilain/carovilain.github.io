@@ -1,37 +1,8 @@
-/* style.css */
-* { box-sizing: border-box; }
-
-  h1 { font-weight: 350; font-size: 1.8rem; margin: 0 0 10px 0; letter-spacing: 1px; }
-  
-  p {
-    color: #ffffffda;
-    font-weight: 150;
-    font-size: medium;
-    text-align: left;
-    line-height: 150%;
-    margin-top: 0px; /* Adjust this value for more or less breathing room */
-    margin-bottom: 10px; /* Optional: keeps spacing consistent at the bottom */
-  }
-
-  /* This targets all links not already styled specifically elsewhere */
-a {
-  color: #ffffff; /* Or whatever color fits your brand */
-  text-decoration: underline; /* Keeps them recognizable as links */
-  text-underline-offset: 3px; /* Gives the underline some breathing room */
-  transition: color 0.3s ease, opacity 0.3s ease;
+/* 1. Global Reset & Base Styles */
+* { 
+  box-sizing: border-box; 
 }
 
-a:hover {
-  color: #00b4d8; /* A light blue from your gradient for a pop of color */
-  opacity: 0.8;
-  text-decoration: none; /* Optional: hides underline on hover */
-}
-
-/* Specific fix for links inside paragraphs to ensure they don't stay blue */
-p a {
-  color: inherit; /* Forces the link to take the same color as the paragraph text */
-  text-decoration-color: rgba(255, 255, 255, 0.4); /* Makes the underline subtle */
-}
 html, body {
   min-height: 100%;
   margin: 0;
@@ -39,58 +10,111 @@ html, body {
   font-family: "Figtree", sans-serif;
 }
 
+body {
+  color: #ffffff;
+  background: linear-gradient(160deg, #00b4d8 0%, #0077b6 100%);
+  background-attachment: fixed;
+  text-align: center;
+  padding: 0 7vw;
+}
+
+/* 2. Typography */
+h1 { 
+  font-weight: 350; 
+  font-size: 1.8rem; 
+  margin: 0 0 10px 0; 
+  letter-spacing: 1px; 
+}
+
+p {
+  color: #ffffffda;
+  font-weight: 150;
+  font-size: medium;
+  text-align: left;
+  line-height: 150%;
+  margin: 0 0 10px 0;
+}
+
+/* 3. Global Links */
+a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover {
+  color: #00b4d8;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/* Specific Link Overrides */
+p a {
+  color: inherit;
+  text-decoration-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 4. Navigation & Layout Components */
 .sticky-name {
   position: absolute;
-  top: 30px;         /* Matches the nav's top padding */
-  left: 7vw;         /* Matches your body padding so it aligns with your content edge */
+  top: 30px;
+  left: 7vw;
   font-weight: 350;
   font-size: 1.2rem;
   letter-spacing: 1px;
   text-decoration: none;
   color: #ffffff;
-  line-height: 1;    /* Prevents extra spacing around the text */
+  line-height: 1;
   margin: 0;
   z-index: 10;
-}
-@media (max-width: 600px) {
-  .sticky-name {
-    top: 10px;
-    left: 10px;
-    font-size: 14px;
-  }
-}
-
-body {
-  color: #ffffff;
-  /* Change this ONE line to update the whole site */
-  background: linear-gradient(160deg, #00b4d8 0%, #0077b6 100%);
-  background-attachment: fixed;
-  text-align: center;
-  padding: 0 7vw; /* Adds 5% of the screen width to the left and right */
-  box-sizing: border-box; /* Ensures padding doesn't create a horizontal scrollbar */
 }
 
 nav {
   width: 100%;
-  padding: 30px 7vw; /* Top/Bottom 30px, Sides match your body padding */
-  text-align: center;
+  padding: 30px 7vw;
   display: flex;
-  justify-content: center; /* Keeps links centered */
-  align-items: center;     /* Vertically aligns items */
-  min-height: 1.5rem;      /* Matches the height scale of your name */
+  justify-content: center;
+  align-items: center;
+  min-height: 1.5rem;
 }
+
 nav a {
-  color: white;
   text-decoration: none;
   margin: 0 12px;
   font-weight: 400;
   font-size: 0.9rem;
   letter-spacing: 0.5px;
-  transition: opacity 0.3s;
 }
 
 nav a:hover {
   opacity: 0.6;
+  color: #ffffff; /* Prevents global hover color from overriding nav */
+}
+
+/* 5. Content Sections */
+.content { 
+  margin: 60px auto 0 auto; 
+  padding: 0 5%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.about-container {
+  gap: 50px;
+  margin-top: 40px;
+}
+
+img.bio-pic {
+  width: 35% !important;
+  flex-shrink: 0;
+  border-radius: 3%;
+  padding-bottom: 20%;
+}
+
+.bio-text {
+  flex: 1;
+  text-align: left;
 }
 
 video {
@@ -102,20 +126,24 @@ video:hover {
   filter: brightness(1.1);
 }
 
-footer p {
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 15px;
-  text-align: center; /* Add this line to center the copyright text */
+/* 6. Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 60px 30px;
 }
 
+.project { grid-column: span 3; }
+.project.featured { grid-column: span 6; margin-bottom: 20px; }
+.project.vertical { grid-column: span 2; }
+.project.horizontal { grid-column: span 3; }
+
+/* 7. Footer */
 .footer-line {
   width: 40px;
   height: 1px;
   background: rgba(255, 255, 255, 0.3);
-  margin: 0 auto 30px auto;
+  margin: 50px auto 30px auto;
 }
 
 footer p {
@@ -123,7 +151,8 @@ footer p {
   letter-spacing: 1px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 15px;
+  margin-bottom: 75px;
+  text-align: center;
 }
 
 .footer-links a {
@@ -131,79 +160,24 @@ footer p {
   text-decoration: none;
   font-size: 0.8rem;
   margin: 0 10px;
-  transition: color 0.3s;
-padding-bottom: 10%;
+  padding-bottom: 10%;
 }
 
-
-
-.content { 
-  margin-top: 60px; 
-  padding: 0 5%; /* Side breathing room */
-  max-width: 800px; /* Narrower width for easier reading */
-  margin-left: auto; 
-  margin-right: auto; 
-  text-align: center; /* Centers the Heading and Subtitle */
-}
-
-.about-container {
-  gap: 50px;                /* Gap between image and text */
-  margin-top: 40px;
-}
-
-img.bio-pic {
-  width: 35% !important;    /* Proportional size so it can shrink */
-  flex-shrink: 0;           /* Prevents text from squeezing the image */
-  border-radius: 3%;
-  padding-bottom: 20%;
-}
-
-.bio-text {
-  flex: 1;                  /* Allows text to take up remaining space */
-  text-align: left;
-
-}
-
-/* The Grid Strategy */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6-column base for maximum flexibility */
-  gap: 60px 30px;
-}
-
-/* 1. Featured (Full Width) */
-.project.featured {
-  grid-column: span 6; 
-  margin-bottom: 20px;
-}
-
-/* 2. Three Vertical Videos (Each takes 2 of the 6 columns) */
-.project.vertical {
-  grid-column: span 2;
-}
-
-/* 3. Two Horizontal Videos (Each takes 3 of the 6 columns) */
-.project.horizontal {
-  grid-column: span 3;
-}
-
-/* 4. The rest of the projects (Default back to 2-up or keep as needed) */
-.project {
-  grid-column: span 3; 
-}
-
-
-
-/* Mobile handling: Stack everything in 1 column */
+/* 8. Media Queries */
 @media (max-width: 768px) {
   .portfolio-grid { 
     grid-template-columns: 1fr; 
     gap: 40px;
   }
-  .project.featured, 
-  .project.vertical, 
-  .project.horizontal, 
-  .project { 
+  .project.featured, .project.vertical, .project.horizontal, .project { 
     grid-column: span 1; 
+  }
+}
+
+@media (max-width: 600px) {
+  .sticky-name {
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
   }
 }
