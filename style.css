@@ -192,10 +192,7 @@ img.bio-pic {
   grid-column: span 3; 
 }
 
-.project-title { padding-top: 5%;}
 
-.project-desc {color: #ff0000;
-font-size: 500;}
 
 /* Mobile handling: Stack everything in 1 column */
 @media (max-width: 768px) {
