@@ -134,6 +134,7 @@ video {
   cursor: pointer;
 }
 
+
 video:hover {
   filter: brightness(1.1);
 }
