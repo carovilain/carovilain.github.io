@@ -100,21 +100,33 @@ nav a:hover {
   text-align: center;
 }
 
+/* Centers the image container */
 .about-container {
-  gap: 50px;
-  margin-top: 40px;
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  margin-top: 20px;
+  width: 100%;
 }
 
+/* Styles the image */
 img.bio-pic {
-  width: 35% !important;
-  flex-shrink: 0;
+  width: 35%;             /* Adjust this percentage to your preferred size */
+  max-width: 400px;       /* Prevents the image from getting too large on big screens */
+  height: auto;
   border-radius: 3%;
-  padding-bottom: 20%;
+  display: block;
+margin: 6%;
 }
 
+/* Ensures text remains left-aligned but centered in the page layout */
 .bio-text {
-  flex: 1;
-  text-align: left;
+  max-width: 650px;       /* Keeps line length readable */
+  margin: 0 auto;         /* Centers the text block itself */
+  text-align: center; 
+}
+
+.bio-text p {
+  text-align: center;
 }
 
 video {
