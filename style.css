@@ -26,13 +26,27 @@ h1 {
   letter-spacing: 1px; 
 }
 
-p {
+p, li {
   color: #ffffffda;
   font-weight: 150;
   font-size: medium;
   text-align: left;
   line-height: 150%;
+}
+
+p {
   margin: 0 0 10px 0;
+}
+
+ul, ol {
+  margin: 20px auto 0 auto;  /* Kept the space between h1 and the list start */
+  padding-left: 0;          
+  list-style-type: none;    
+  max-width: 600px;         
+}
+
+li {
+  margin-bottom: 8px;       /* Reduced from 15px to 8px for a tighter layout */
 }
 
 /* 3. Global Links */
@@ -100,6 +114,10 @@ nav a:hover {
   text-align: center;
 }
 
+section {
+  margin-bottom: 50px;      
+}
+
 /* Centers the image container */
 .about-container {
   display: flex;
@@ -115,7 +133,7 @@ img.bio-pic {
   height: auto;
   border-radius: 3%;
   display: block;
-margin: 6%;
+  margin: 6%;
 }
 
 /* Ensures text remains left-aligned but centered in the page layout */
@@ -133,7 +151,6 @@ video {
   transition: opacity 0.3s ease;
   cursor: pointer;
 }
-
 
 video:hover {
   filter: brightness(1.1);
