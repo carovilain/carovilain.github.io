@@ -2,46 +2,25 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5P8RHDNV4W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5P8RHDNV4W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-5P8RHDNV4W');
-</script>
-
-  <!-- Instant redirect to the about page -->
-  <meta http-equiv="refresh" content="0; url=about.html">
+    gtag('config', 'G-5P8RHDNV4W');
+  </script>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="0; url=about.html">
   <title>Caro Vilain</title>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .login-wrapper {
-      display: none;
-    }
-  </style>
+  
+  <script>
+    // Immediate JavaScript fallback redirect
+    window.location.replace("about.html");
+  </script>
 </head>
 <body>
-
-  <nav id="main-nav" style="position: relative;">
-    <a href="about.html">About</a>
-    <a href="portfolio.html">Work</a>
-    <a href="appearances.html">Appearances</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <footer>
-    <div class="footer-line"></div>
-    <p>© 2026 Caro Vilain</p>
-    <div class="footer-links">
-      <a href="mailto:carovilain@icloud.com">Email</a>
-      <a href="https://www.linkedin.com/in/caro-vilain-037748b7" target="_blank">LinkedIn</a>
-    </div>
-  </footer>
-
+  <p>Redirecting to <a href="about.html">about page</a>...</p>
 </body>
 </html>
