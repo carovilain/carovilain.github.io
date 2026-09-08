@@ -11,6 +11,9 @@
   gtag('config', 'G-5P8RHDNV4W');
 </script>
 
+  <!-- Instant redirect to the about page -->
+  <meta http-equiv="refresh" content="0; url=about.html">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caro Vilain</title>
@@ -18,83 +21,18 @@
   <link rel="stylesheet" href="style.css">
   <style>
     .login-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 80vh;
-      text-align: center;
+      display: none;
     }
-
-    input {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid #ffffff;
-      color: #ffffff;
-      font-family: 'Figtree', sans-serif;
-      font-weight: 300;
-      font-size: 1rem;
-      padding: 10px 0;
-      width: 200px;
-      text-align: center;
-      outline: none;
-      margin-top: 40px;
-      margin-bottom: 30px;
-    }
-
-    input::placeholder { color: #ffffff; opacity: 1; }
-
-    .enter-trigger {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      cursor: pointer;
-      color: #ffffff;
-      opacity: 0.7;
-      transition: opacity 0.3s;
-    }
-
-    .subtitle {
-      color: rgba(255, 255, 255, 0.7);
-      font-weight: 300;
-      font-size: 0.95rem;
-      margin-top: 10px;
-      letter-spacing: 1px;
-    }
-
-    #error-msg {
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 0.7rem;
-      margin-top: 20px;
-      visibility: hidden;
-    }
-
-    .hidden { display: none !important; }
   </style>
 </head>
 <body>
 
-  <nav id="main-nav" class="hidden" style="display: block; position: relative;">
-
+  <nav id="main-nav" style="position: relative;">
     <a href="about.html">About</a>
     <a href="portfolio.html">Work</a>
     <a href="appearances.html">Appearances</a>
     <a href="contact.html">Contact</a>
   </nav>
-
-  <div class="login-wrapper">
-    <h1>Caro Vilain</h1>
-
-    <div id="login-section">
-      <input type="password" id="pwField" placeholder="Password" autocomplete="off">
-      <div class="enter-trigger" onclick="checkPassword()">Enter</div>
-      <p id="error-msg">Incorrect</p>
-    </div>
-
-    <div id="home-section" class="hidden">
-
-    </div>
-  </div>
 
   <footer>
     <div class="footer-line"></div>
@@ -104,39 +42,6 @@
       <a href="https://www.linkedin.com/in/caro-vilain-037748b7" target="_blank">LinkedIn</a>
     </div>
   </footer>
-
-  <script>
-    // Check if already logged in on load
-    window.onload = function() {
-      if (sessionStorage.getItem('isLoggedIn') === 'true') {
-        showHomeState();
-      }
-    };
-
-    function checkPassword() {
-      const pw = document.getElementById('pwField').value;
-      if (pw === 'notthepassword') { 
-        sessionStorage.setItem('isLoggedIn', 'true');
-        // SUCCESS: Redirects to ABOUT instead of Portfolio
-        window.location.href = "about.html";
-      } else {
-        const error = document.getElementById('error-msg');
-        error.style.visibility = 'visible';
-        setTimeout(() => { error.style.visibility = 'hidden'; }, 2000);
-      }
-    }
-
-    // This handles the view if they click "Home" after they've already logged in
-    function showHomeState() {
-      document.getElementById('login-section').classList.add('hidden');
-      document.getElementById('home-section').classList.remove('hidden');
-      document.getElementById('main-nav').classList.remove('hidden');
-    }
-
-    document.getElementById("pwField").addEventListener("keyup", function(event) {
-      if (event.key === "Enter") { checkPassword(); }
-    });
-  </script>
 
 </body>
 </html>
