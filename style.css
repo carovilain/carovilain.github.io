@@ -1,4 +1,6 @@
-/* ---------- Tokens ---------- */
+/* ==========================================================================
+   1. Tokens & Global Styles
+   ========================================================================== */
 :root {
   --bg-color: #ffffff;
   --text: rgb(36, 33, 33); /* Charcoal */
@@ -8,7 +10,7 @@
   --teal: #397fbd;
   --yellow: #ffce1d;
   
-  --d: min(94vw, 600px); /* diameter of the moving circle */
+  --d: min(94vw, 600px);
   --header-h: 4.5rem;
 }
 
@@ -23,20 +25,6 @@ body {
   line-height: 1.5;
 }
 
-h1, 
-.wordmark, 
-.project-title,
-body.page-appearances .appearance-section h1 {
-  font-family: "Cal Sans", "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
-  font-weight: 400; /* Forces Cal Sans to its base normal weight */
-
-}
-
-/* Page background override for portfolio page */
-body.page-portfolio {
-  background-color: var(--bg-color);
-}
-
 a { color: inherit; }
 
 a:focus-visible {
@@ -44,87 +32,22 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-/* Outer blue (teal) background circle on Portfolio page */
-.bg-circle-static-blue {
-  position: fixed;
-  width: 100vmax;
-  height: 100vmax;
-  min-width: 600px;
-  min-height: 600px;
-  right: -65vmax;
-  bottom: -75vmax;
-  border-radius: 50%;
-  background-color: var(--teal);
-  z-index: -1;
-  pointer-events: none;
-  display: grid;
-  place-items: center; /* Centers the inner circle */
+/* ---------- Global Typography & Headings ---------- */
+h1, 
+.intro h1,
+body.page-portfolio .content h1,
+body.page-about .about-content h1,
+body.page-appearances .appearance-section h1,
+.wordmark, 
+.project-title {
+  font-family: "Cal Sans", "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+  font-weight: 400; 
 }
 
-/* Inner green circle nested inside the blue background circle */
-.bg-circle-inner-green {
-  width: 82%;
-  height: 82%;
-  border-radius: 50%;
-  background-color: var(--yellow);
-}
 
-/* Large static green background circle */
-.bg-circle-static-yellow {
-  position: fixed;
-  width: 60vmax;
-  height: 60vmax;
-  min-width: 600px;
-  min-height: 600px;
-  left: -45vmax;
-  border-radius: 50%;
-  background-color: var(--green-2);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* ---------- Fixed background (Contact page) ---------- */
-.backdrop {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.bg-circle-01 {
-  position: absolute;
-  width: 130vmax;
-  height: 130vmax;
-  top: -6vh;
-  left: -28vmax;
-  border-radius: 50%;
-  background-color: var(--green-2);
-}
-
-.bg-circle-02,
-.bg-circle-03 {
-  position: relative;
-  width: 90%;
-  height: 90%;
-  left: 2%;
-  border-radius: 50%;
-}
-
-.bg-circle-02 { background-color: var(--green-2); }
-.bg-circle-03 { background-color: var(--green-2); }
-
-.line-01 {
-  position: absolute;
-  top: 0;
-  left: 20vw;
-  width: clamp(36px, 7vw, 100px);
-  height: 100%;
-  background-color: var(--yellow);
-  z-index: 1;
-}
-
-/* ---------- Header ---------- */
+/* ==========================================================================
+   2. Global Header & Navigation
+   ========================================================================== */
 .site-header {
   position: fixed;
   top: 0;
@@ -141,13 +64,11 @@ a:focus-visible {
   background-color: transparent;
 }
 
-/* Opaque header background for portfolio page to prevent overlap when scrolling */
 body.page-portfolio .site-header {
   background-color: var(--bg-color);
 }
 
 .wordmark {
-  font-weight: 600;
   font-size: 1.375rem;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -194,150 +115,66 @@ body.page-portfolio .site-header {
   border-bottom-color: var(--yellow);
 }
 
-/* ---------- Main layout (Contact page specific) ---------- */
-main {
+
+/* ==========================================================================
+   3. Global Footer
+   ========================================================================== */
+.site-footer {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 2rem 6vw;
-  padding: calc(var(--header-h) + 2rem) 3vw 1rem;
-  min-height: auto;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  padding: 1.25rem 3vw;
+  background-color: transparent;
+  font-size: 1rem;
+  color: var(--text);
 }
 
-@media (min-width: 1100px) {
-  main {
-    min-height: calc(110vh - var(--header-h) - 2rem);
-  }
-  
-  
-  .circle-teal {
-    margin-bottom: 2rem;
-  }
-}
-@media (min-width: 1100px) {
-  main {
-    min-height: calc(110vh - var(--header-h) - 2rem);
-  }
-  
-  .circle-teal {
-    margin-bottom: 2rem;
-  }
+.site-footer a {
+  margin-left: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  color: var(--text);
 }
 
-/* ---------- Contact Page Mobile Layout & Footer Adjustments ---------- */
-@media (max-width: 768px) {
-  main {
-    min-height: auto;
-    padding-bottom: 17rem;
-  }
-
-  .site-footer {
-    margin-top: auto;
-    padding-bottom: 2rem;
-  }
+.site-footer a:first-child {
+  margin-left: 0;
 }
 
-/* ---------- The moving circle (Contact page) ---------- */
-.circle-teal {
-  flex: none;
-  --d: min(65vw, 480px);
-  width: var(--d);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background-color: var(--teal);
-  display: grid;
-  place-items: center;
+.site-footer a:hover {
+  color: var(--green-2);
 }
 
-.circle-green {
-  width: 88%;
-  aspect-ratio: 1;
-  padding-top: 1%;
-  padding-bottom: 1%;
+body.page-appearances .site-footer a:hover {
+  color: var(--green-2);
+}
+
+
+/* ==========================================================================
+   4. Index Page Styles
+   ========================================================================== */
+.bg-circle-static-yellow {
+  position: fixed;
+  width: 60vmax;
+  height: 60vmax;
+  min-width: 600px;
+  min-height: 600px;
+  left: -45vmax;
   border-radius: 50%;
   background-color: var(--green-2);
+  z-index: -1;
+  pointer-events: none;
 }
 
-.circle-yellow {
-  position: sticky;
-  top: calc(var(--header-h) + 1.5rem);
-  width: 72%;
-  aspect-ratio: 1;
-  container-type: inline-size;
-  margin: 0 auto;
-  border-radius: 50%;
-  background-color: var(--yellow);
-}
 
-/* ---------- Email button (Contact page) ---------- */
-.email-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  color: var(--charcoal);
-  background-color: var(--yellow);
-  text-decoration: none;
-  white-space: nowrap;
-font-family: "Cal Sans", "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
-  font-weight: 400;
-  font-size: 6.6cqw;
-  line-height: 1.25;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.email-button:hover {
-  background-color: var(--charcoal);
-  color: var(--yellow);
-}
-
-.email-button:focus-visible {
-  outline: 4px solid var(--charcoal);
-  outline-offset: -10px;
-}
-
-.email-button:hover:focus-visible {
-  outline-color: var(--yellow);
-}
-
-/* ---------- Intro Text (Contact page) ---------- */
-.intro {
-  order: -1;
-  flex: 0 1 26rem;
-  width: 100%;
-  max-width: 26rem;
-  padding: 1.5rem 2rem 2rem;
-  border-radius: 2rem;
+/* ==========================================================================
+   5. Portfolio Page Styles
+   ========================================================================== */
+body.page-portfolio {
   background-color: var(--bg-color);
-  margin-bottom: 0;
 }
 
-.intro h1 {
-  margin: 0 0 0.5rem;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 600;
-  line-height: 1.1;
-  color: var(--text);
-}
-
-.intro p {
-  margin: 0;
-  max-width: 34ch;
-  color: var(--text);
-}
-
-@media (min-width: 1100px) {
-  .intro {
-    order: 0;
-    position: sticky;
-    top: calc(var(--header-h) + 1.5rem);
-  }
-}
-
-/* ---------- Portfolio Grid & Content Layout (Scoped) ---------- */
 body.page-portfolio main {
   display: block; 
   min-height: auto;
@@ -353,9 +190,7 @@ body.page-portfolio .content {
   margin-right: auto; 
 }
 
-/* ---------- Portfolio Typography & Spacing Overrides ---------- */
 body.page-portfolio .content h1 { 
-  font-weight: 600; 
   font-size: clamp(2.5rem, 6vw, 4rem); 
   margin: 0 0 0.5rem 0; 
   line-height: 1.1;
@@ -408,7 +243,6 @@ body.page-portfolio .subtitle {
 
 .project-title {
   font-size: 0.9rem;
-  font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   display: block;
@@ -437,35 +271,45 @@ iframe {
   width: 100%; 
 }
 
-/* ---------- Footer ---------- */
-.site-footer {
+/* ---------- Portfolio Page Circles (Scroll Tracking) ---------- */
+.bg-circle-static-blue {
+  position: fixed;
+  width: 100vmax;
+  height: 100vmax;
+  min-width: 600px;
+  min-height: 600px;
+  right: -65vmax;
+  bottom: -75vmax;
+  border-radius: 50%;
+  background-color: var(--teal);
+  z-index: -1;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+}
+/* Inner circle nested inside the blue background circle with parallax tracking */
+.bg-circle-inner-green {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.5rem 2rem;
-  padding: 1.25rem 3vw;
-  background-color: transparent;
-  font-size: 1rem;
-  color: var(--text);
+  width: 82%;
+  height: 82%;
+  border-radius: 50%;
+  background-color: var(--yellow);
+  will-change: transform; /* Optimizes performance for smooth scrolling */
 }
-
-.site-footer a {
-  margin-left: 1rem;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  color: var(--text);
+@keyframes floatCircle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-15px, 20px) scale(1.03);
+  }
+  66% {
+    transform: translate(20px, -15px) scale(0.97);
+  }
 }
-
-.site-footer a:first-child {
-  margin-left: 0;
-}
-
-.site-footer a:hover {
-  color: var(--green-2);
-}
-
-/* ---------- About Page Layout & Image Styling ---------- */
+/* ==========================================================================
+   6. About Page Styles
+   ========================================================================== */
 body.page-about main {
   min-height: auto;
   padding-bottom: 15rem;
@@ -479,6 +323,20 @@ body.page-about main.about-main {
   gap: 2rem 6vw;
   padding: calc(var(--header-h) + 2rem) 3vw 4rem;
   min-height: calc(100vh - var(--header-h) - 4rem);
+}
+
+body.page-about .about-content {
+  flex: 0 1 26rem;
+  padding: 1.5rem 2rem 2rem;
+  border-radius: 2rem;
+  margin: 0;
+}
+
+body.page-about .about-content h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  color: var(--text);
 }
 
 .about-circle-teal {
@@ -495,45 +353,17 @@ body.page-about main.about-main {
   justify-content: center;
 }
 
-body.page-about .about-content {
-  flex: 0 1 26rem;
-  padding: 1.5rem 2rem 2rem;
-  border-radius: 2rem;
-  
-  margin: 0;
-}
-
-body.page-about .about-content h1 {
-  margin: 0 0 0.5rem;
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 600;
-  line-height: 1.1;
-  color: var(--text);
-}
-
-.bio-text p {
-  margin: 0 0 1rem 0;
-  font-weight: 300;
-  line-height: 1.5;
-  color: var(--text);
-}
-
-/* Bio text inline link hover state */
-.bio-text a:hover {
-  color: var(--green-2);
-}
-
-/* ---------- About Page Circle Styles ---------- */
 .circle-yellow-outer {
   flex: none;
-  --d: min(75vw, 360px);
+  --d: min(75vw, 320px);
   width: var(--d);
   aspect-ratio: 1;
   border-radius: 50%;
   background-color: var(--yellow);
   display: grid;
   place-items: center;
-  transform: translateY(65px);
+  transform: translateY(5px);
+  margin-top: 4%;
   margin-bottom: 8%;
 }
 
@@ -565,7 +395,17 @@ body.page-about .about-content h1 {
   display: block;
 }
 
-/* Static teal background circle for the bottom of the About page */
+.bio-text p {
+  margin: 0 0 1rem 0;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.bio-text a:hover {
+  color: var(--green-2);
+}
+
 .bg-circle-static-teal {
   position: fixed;
   width: 100vmax;
@@ -580,7 +420,6 @@ body.page-about .about-content h1 {
   pointer-events: none;
 }
 
-/* ---------- About Page Sticky Scroll Track Fix ---------- */
 @media (min-width: 1100px) {
   body.page-about main {
     min-height: calc(108vh - var(--header-h));
@@ -588,7 +427,10 @@ body.page-about .about-content h1 {
   }
 }
 
-/* ---------- Appearances Page Layout & Typography ---------- */
+
+/* ==========================================================================
+   7. Appearances Page Styles
+   ========================================================================== */
 body.page-appearances main {
   display: block;
   padding: calc(var(--header-h) + 4rem) 3vw 8rem;
@@ -615,7 +457,6 @@ body.page-appearances .appearance-section {
 }
 
 body.page-appearances .appearance-section h1 {
-
   margin: 0 0 1rem 0;
   line-height: 1;
   color: var(--text);
@@ -648,7 +489,6 @@ body.page-appearances .appearance-section a strong {
   font-weight: 600;
 }
 
-/* Large static yellow background circle for Appearances page */
 .bg-circle-static {
   position: fixed;
   width: 100vmax;
@@ -663,12 +503,182 @@ body.page-appearances .appearance-section a strong {
   pointer-events: none;
 }
 
-/* Dark hover state for footer links on Appearances page */
-body.page-appearances .site-footer a:hover {
-  color: var(--green-2);
+
+/* ==========================================================================
+   8. Contact Page Styles
+   ========================================================================== */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem 6vw;
+  padding: calc(var(--header-h) + 2rem) 3vw 1rem;
+  min-height: auto;
 }
 
-/* ---------- Mobile Navigation & Hamburger Menu ---------- */
+@media (min-width: 1100px) {
+  main {
+    min-height: calc(110vh - var(--header-h) - 2rem);
+  }
+  
+  .circle-teal {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    min-height: auto;
+    padding-bottom: 17rem;
+  }
+
+  .site-footer {
+    margin-top: auto;
+    padding-bottom: 2rem;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-circle-01 {
+  position: absolute;
+  width: 130vmax;
+  height: 130vmax;
+  top: -6vh;
+  left: -28vmax;
+  border-radius: 50%;
+  background-color: var(--green-2);
+}
+
+.bg-circle-02,
+.bg-circle-03 {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  left: 2%;
+  border-radius: 50%;
+}
+
+.bg-circle-02 { background-color: var(--green-2); }
+.bg-circle-03 { background-color: var(--green-2); }
+
+.line-01 {
+  position: absolute;
+  top: 0;
+  left: 20vw;
+  width: clamp(36px, 7vw, 100px);
+  height: 100%;
+  background-color: var(--yellow);
+  z-index: 1;
+}
+
+.circle-teal {
+  flex: none;
+  --d: min(65vw, 480px);
+  width: var(--d);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--teal);
+  display: grid;
+  place-items: center;
+}
+
+.circle-green {
+  width: 88%;
+  aspect-ratio: 1;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 50%;
+  background-color: var(--green-2);
+}
+
+.circle-yellow {
+  position: sticky;
+  top: calc(var(--header-h) + 1.5rem);
+  width: 72%;
+  aspect-ratio: 1;
+  container-type: inline-size;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: var(--yellow);
+}
+
+.email-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  color: var(--charcoal);
+  background-color: var(--yellow);
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: "Cal Sans", "Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 6.6cqw;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.email-button:hover {
+  background-color: var(--charcoal);
+  color: var(--yellow);
+}
+
+.email-button:focus-visible {
+  outline: 4px solid var(--charcoal);
+  outline-offset: -10px;
+}
+
+.email-button:hover:focus-visible {
+  outline-color: var(--yellow);
+}
+
+.intro {
+  order: -1;
+  flex: 0 1 26rem;
+  width: 100%;
+  max-width: 26rem;
+  padding: 1.5rem 2rem 2rem;
+  border-radius: 2rem;
+  background-color: var(--bg-color);
+  margin-bottom: 0;
+}
+
+.intro h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.intro p {
+  margin: 0;
+  max-width: 34ch;
+  color: var(--text);
+}
+
+@media (min-width: 1100px) {
+  .intro {
+    order: 0;
+    position: sticky;
+    top: calc(var(--header-h) + 1.5rem);
+  }
+}
+
+
+/* ==========================================================================
+   9. Mobile Navigation / Hamburger Component
+   ========================================================================== */
 .nav-toggle {
   display: none;
   background: none;
@@ -702,7 +712,6 @@ body.page-appearances .site-footer a:hover {
 .hamburger::before { top: -6px; }
 .hamburger::after { bottom: -6px; }
 
-/* Animate Hamburger icon to an "X" when open */
 .nav-toggle[aria-expanded="true"] .hamburger {
   background-color: transparent;
 }
@@ -715,7 +724,6 @@ body.page-appearances .site-footer a:hover {
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Mobile Screen Breakpoint */
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;

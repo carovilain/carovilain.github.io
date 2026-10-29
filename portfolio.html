@@ -266,5 +266,23 @@
   });
 </script>
 
+<script>
+  window.addEventListener('scroll', () => {
+    const innerCircle = document.querySelector('.bg-circle-inner-green');
+    if (!innerCircle) return;
+    
+    const scrollPosition = window.pageYOffset;
+    
+    // Reversed formula: starts smaller (0.85) and scales up as you scroll down
+    // Adjust 0.0003 to control how fast it grows
+    let scale = 0.85 + (scrollPosition * 0.0003);
+    
+    // Clamp the scale between a minimum size (0.85) and maximum size (1.15) 
+    // so it never exceeds the boundaries of the blue circle
+    scale = Math.max(0.85, Math.min(1.05, scale));
+    
+    innerCircle.style.transform = `scale(${scale})`;
+  });
+</script>
 </body>
 </html>
