@@ -328,7 +328,8 @@ body.page-about main.about-main {
 }
 
 body.page-about .about-content {
-  flex: 0 1 26rem;
+  flex: 1 1 32rem; /* Allows it to grow and take up more room */
+  max-width: 650px; /* Optional: sets a new maximum boundary */
   padding: 1.5rem 2rem 2rem;
   border-radius: 2rem;
   margin: 0;
@@ -366,7 +367,7 @@ body.page-about .about-content h1 {
   display: grid;
   place-items: center;
   transform: translateY(135px);
-  margin-top: 4%;
+  margin-top: 1%;
   margin-bottom: 30vw;
 }
 
@@ -425,7 +426,7 @@ body.page-about .about-content h1 {
 
 @media (min-width: 1100px) {
   body.page-about main {
-    min-height: calc(108vh - var(--header-h));
+    min-height: calc(116vh - var(--header-h));
     padding-bottom: 6rem;
   }
 }
