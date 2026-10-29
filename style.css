@@ -551,6 +551,20 @@ body.page-about .about-content h1 {
   line-height: 1.5;
   color: var(--text);
 }
+/* Static teal background circle for the bottom of the About page */
+.bg-circle-static-teal {
+  position: fixed;
+  width: 100vmax;
+  height: 100vmax;
+  min-width: 600px;
+  min-height: 600px;
+  left: -45vmax;
+  bottom: -85vmax;
+  border-radius: 50%;
+  background-color: var(--teal);
+  z-index: -1;
+  pointer-events: none;
+}
 
 /* ---------- About Page Sticky Scroll Track Fix ---------- */
 @media (min-width: 1100px) {
