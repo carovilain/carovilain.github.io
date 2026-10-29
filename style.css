@@ -622,19 +622,24 @@ body.page-appearances .appearance-section a strong {
   font-weight: 600;
 }
 
-/* Large static green background circle for Appearances page */
+/* Large static yellow background circle for Appearances page */
 .bg-circle-static {
   position: fixed;
   width: 100vmax;
   height: 100vmax;
   min-width: 600px;
   min-height: 600px;
-  left: -35vmax;
-  bottom: -25vmax;
+  right: -45vmax;
+  bottom: -85vmax;
   border-radius: 50%;
-  background-color: var(--green-2);
+  background-color: var(--yellow);
   z-index: -1;
   pointer-events: none;
+}
+
+/* Dark hover state for footer links on Appearances page */
+body.page-appearances .site-footer a:hover {
+  color: var(--charcoal);
 }
 
 /* ---------- Mobile Navigation & Hamburger Menu ---------- */
