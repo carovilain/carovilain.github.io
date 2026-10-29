@@ -6,9 +6,9 @@
   --text: rgb(36, 33, 33); /* Charcoal */
 
   --charcoal: rgb(36, 33, 33);
-  --green-2: rgb(57, 161, 94);
-  --teal: #397fbd;
-  --yellow: #ffce1d;
+  --green-2: rgb(217, 81, 122);
+  --teal: #2aa0c4;
+  --yellow: #f6ca49;
   
   --d: min(94vw, 600px);
   --header-h: 4.5rem;
@@ -363,7 +363,7 @@ body.page-about .about-content h1 {
   width: var(--d);
   aspect-ratio: 1;
   border-radius: 50%;
-  background-color: var(--yellow);
+  background-color: var(--teal);
   display: grid;
   place-items: center;
   transform: translateY(135px);
@@ -375,7 +375,7 @@ body.page-about .about-content h1 {
   width: 88%;
   aspect-ratio: 1;
   border-radius: 50%;
-  background-color: var(--green-2);
+  background-color: var(--yellow);
 }
 
 .circle-photo-inner {
@@ -419,7 +419,7 @@ body.page-about .about-content h1 {
   left: -45vmax;
   bottom: -85vmax;
   border-radius: 50%;
-  background-color: var(--teal);
+  background-color: var(--green-2);
   z-index: -1;
   pointer-events: none;
 }
