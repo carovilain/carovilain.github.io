@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5P8RHDNV4W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5P8RHDNV4W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-5P8RHDNV4W');
-</script>
+    gtag('config', 'G-5P8RHDNV4W');
+  </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,303 +17,251 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    .content { 
-      margin-top: 60px; 
-      padding: 20px; 
-      max-width: 1200px; 
-      width: 95%; 
-      margin-left: auto; 
-      margin-right: auto; 
-    }
-    h1 { font-weight: 300; font-size: 1.8rem; margin: 0 0 10px 0; letter-spacing: 1px; }
-    .subtitle { color: rgba(255, 255, 255, 0.7); font-weight: 300; margin-bottom: 60px; font-size: 0.95rem; display: block; }
-
-    /* The Grid Strategy */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr); 
-      gap: 60px 30px;
-    }
-
-    .project { text-align: left; grid-column: span 3; } /* Default 2-per-row */
-
-    /* Row 1: Featured */
-    .project.featured {
-      grid-column: span 6; 
-      margin-bottom: 20px;
-    }
-
-    /* Row 2: 3 Vertical Videos */
-    .project.vertical {
-      grid-column: span 2;
-    }
-
-    /* Row 3: 2 Horizontal Videos */
-    .project.horizontal {
-      grid-column: span 3;
-    }
-
-    /* Mobile handling */
-    @media (max-width: 768px) {
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .project.featured, .project.vertical, .project.horizontal, .project { 
-        grid-column: span 1; 
-      }
-    }
-
-    .project-title {
-      font-size: 0.9rem;
-      font-weight: 400;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .project-desc {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.6);
-      font-weight: 300;
-      line-height: 1.4;
-    }
-
-    iframe { border: none; position: absolute; top: 0; left: 0; height: 100%; width: 100%; }
-  </style>
 </head>
-<body>
+<body class="page-portfolio">
+  <!-- Circles -->
+  <div class="bg-circle-static-blue"></div>
+  <div class="bg-circle-static-yellow"></div>
 
-<a href="index.html" class="sticky-name">Caro Vilain</a>
-  <nav style="display: block; position: relative;">
-  <a href="index.html">About</a>
+<header class="site-header">
+  <a class="wordmark" href="index.html">Caro Vilain</a>
+  
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span class="hamburger"></span>
+  </button>
+
+  <nav id="site-nav" aria-label="Main">
+    <a href="index.html">About</a>
     <a href="portfolio.html">Work</a>
     <a href="appearances.html">Appearances</a>
     <a href="contact.html">Contact</a>
   </nav>
+</header>
 
-  <div class="content">
-    <h1>Portfolio</h1>
-    <span class="subtitle">Selected Works</span>
-    
-    <div class="portfolio-grid">
+  <main>
+    <div class="content">
+      <h1>Portfolio</h1>
+      <span class="subtitle">Selected Works</span>
       
-      
-      <div class="project featured">
-        <div style="position:relative; padding-top: 56.25%;">
-          <iframe loading="lazy" title="City of Santa Monica"
-            src="https://play.gumlet.io/embed/69827d07924a60df4b84cbd9?background=false&autoplay=false&loop=false&disableControls=false"
-            referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
-          </iframe>
+      <div class="portfolio-grid">
+        
+        <div class="project featured">
+          <div style="position:relative; padding-top: 56.25%;">
+            <iframe loading="lazy" title="City of Santa Monica"
+              src="https://play.gumlet.io/embed/69827d07924a60df4b84cbd9?background=false&autoplay=false&loop=false&disableControls=false"
+              referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+            </iframe>
+          </div>
+          <div class="project-info">
+            <span class="project-title">City of Santa Monica</span>
+            <span class="project-desc">
+              Creative Direction | Production | Editing<br>
+              Celebrating 10 years of infrastructure progress, highlighting active mobility and urban accessibility.
+            </span>
+          </div>
         </div>
-        <div class="project-info" style="margin-top: 10px;">
-          <span class="project-title" style="font-weight: bold;">City of Santa Monica</span>
-          <span class="project-desc">
-            Creative Direction | Production | Editing<br>
-            Celebrating 10 years of infrastructure progress, highlighting active mobility and urban accessibility.
-          </span>
+
+        <div class="project vertical">
+          <div style="position:relative;aspect-ratio:9/16;">
+            <iframe loading="lazy" title="Gumlet video player"
+              src="https://play.gumlet.io/embed/6aa02c15aa489a4399e2fb60"
+              referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;clipboard-write;">
+            </iframe>
+          </div>
+          <div class="project-info">
+            <span class="project-title">Streets For All</span>
+            <span class="project-desc">
+              Producing | Editing<br>
+              Advocacy Series
+            </span>
+          </div>
         </div>
+
+        <div class="project vertical">
+          <div style="position:relative; width:100%; padding-top: 177.77%;">
+            <iframe loading="lazy" title="Webtoon Promotion"
+              src="https://play.gumlet.io/embed/6aa03007aa489a4399e3d77a?"
+              referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+            </iframe>
+          </div>
+          <div class="project-info">
+            <span class="project-title">Move LA</span>
+            <span class="project-desc">
+              Editing<br>
+              Transit Advocacy with the California State Transportation Agency
+            </span>
+          </div>
+        </div>
+
+        <div class="project vertical">
+          <div style="position:relative; width:100%; padding-top: 177.77%;">
+            <iframe loading="lazy" title="Santa Monica Forward"
+              src="https://play.gumlet.io/embed/6aa032ffaa4fda34667c0a1b"
+              referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+            </iframe>
+          </div>
+          <div class="project-info">
+            <span class="project-title">Hayden AI</span>
+            <span class="project-desc">
+              Editing<br>
+              Social Cutdowns
+            </span>
+          </div>
+        </div>
+
+        <div class="project vertical">
+          <div style="position:relative;aspect-ratio:9/16;">
+            <iframe loading="lazy" title="Gumlet video player"
+              src="https://play.gumlet.io/embed/69d67d2279cd218090e55871?background=false&autoplay=false&loop=false&disable_player_controls=false"
+              referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;clipboard-write;">
+            </iframe>
+          </div>
+          <div class="project-info">
+            <span class="project-title">Streets For All | NRDC</span>
+            <span class="project-desc">
+              Editing | Graphics<br>
+              Local Project Advocacy
+            </span>
+          </div>
+        </div>
+
+        <div class="project vertical">
+          <div style="position:relative; width:100%; padding-top: 177.77%;">
+            <iframe loading="lazy" title="Webtoon Promotion"
+              src="https://play.gumlet.io/embed/69827d07924a60df4b84cbd4?background=false&autoplay=false&loop=false&disableControls=false"
+              referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+            </iframe>
+          </div>
+          <div class="project-info">
+            <span class="project-title">Webtoon</span>
+            <span class="project-desc">
+              Editing | Motion Graphics<br>
+              Promotion of the Creator Residency Program
+            </span>
+          </div>
+        </div>
+
+        <div class="project vertical">
+          <div style="position:relative; width:100%; padding-top: 177.77%;">
+            <iframe loading="lazy" title="Santa Monica Forward"
+              src="https://play.gumlet.io/embed/69828b4a4db88a967fb5aeb9?background=false&autoplay=false&loop=false&disableControls=false"
+              referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+            </iframe>
+          </div>
+          <div class="project-info">
+            <span class="project-title">Santa Monica Forward</span>
+            <span class="project-desc">
+              Creative Direction | Editing<br>
+              Social Media Campaign to promote a local advocacy organization
+            </span>
+          </div>
+        </div>
+
+        <div class="project vertical">
+          <div style="position:relative; width:100%; padding-top: 177.77%;">
+            <iframe loading="lazy" title="Big Blue Bus"
+              src="https://play.gumlet.io/embed/69827e7e924a60df4b84f4e8?background=false&autoplay=false&loop=false&disableControls=false"
+              referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+            </iframe>
+          </div>
+          <div class="project-info">
+            <span class="project-title">Big Blue Bus</span>
+            <span class="project-desc">
+              Creative Direction | Editing<br>
+              Celebrating Bike Month 2025
+            </span>
+          </div>
+        </div>
+
+        <div class="project vertical">
+          <div style="position:relative; width:100%; padding-top: 177.77%;">
+            <iframe loading="lazy" title="Bubba Fish"
+              src="https://play.gumlet.io/embed/698299f84db88a967fb73e7d?background=false&autoplay=false&loop=false&disableControls=false"
+              referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+            </iframe>
+          </div>
+          <div class="project-info">
+            <span class="project-title">Bubba Fish for City Council</span>
+            <span class="project-desc">
+              Editing<br>
+              Social Media Campaign for the 2024 Election
+            </span>
+          </div>
+        </div>
+
+        <div class="project vertical">
+          <div style="position:relative; width:100%; padding-top: 177.77%;">
+            <iframe loading="lazy" title="Lumos Partnership"
+              src="https://play.gumlet.io/embed/69828d17924a60df4b86816c?background=false&autoplay=false&loop=false&disableControls=false"
+              referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+            </iframe>
+          </div>
+          <div class="project-info">
+            <span class="project-title">Lumos</span>
+            <span class="project-desc">
+              Creative Direction | Editing<br>
+              Social Media Partnership
+            </span>
+          </div>
+        </div>
+
+        <div class="project horizontal">
+          <div style="position:relative; width:100%; padding-top: 56.25%;">
+            <iframe loading="lazy" title="Paramount - Sonic"
+              src="https://play.gumlet.io/embed/69827d07742559dc5aa5b4ae?background=false&autoplay=false&loop=false&disableControls=false"
+              referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+            </iframe>
+          </div>
+          <div class="project-info">
+            <span class="project-title">Paramount Studios</span>
+            <span class="project-desc">
+              Editing | Motion Graphics<br>
+              Promotion of the Sonic the Hedgehog movies.
+            </span>
+          </div>
+        </div>
+
+        <div class="project horizontal">
+          <div style="position:relative; width:100%; padding-top: 56.25%;">
+            <iframe loading="lazy" title="GoSaMo"
+              src="https://play.gumlet.io/embed/6982a0d84db88a967fb7f607?background=false&autoplay=false&loop=false&disableControls=false"
+              referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+            </iframe>
+          </div>
+          <div class="project-info">
+            <span class="project-title">GoSaMo</span>
+            <span class="project-desc">
+              Motion Graphics<br>
+              Transportation Options Awareness for News Employees
+            </span>
+          </div>
+        </div>
+
       </div>
-         <div class="project vertical">
-<div style="position:relative;aspect-ratio:9/16;">
-      <iframe
-            loading="lazy" title="Gumlet video player"
-            src="https://play.gumlet.io/embed/6aa02c15aa489a4399e2fb60"
-            style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
-          referrerpolicy="origin"
-          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;clipboard-write;">
-          </iframe>
     </div>
-        <div class="project-info" style="margin-top: 10px;">
-          <span class="project-title" style="font-weight: bold;">Streets For All </span>
-          <span class="project-desc">
-            Producing | Editing<br>
-            Advocacy Series
-          </span>
-        </div>
-      </div>
+  </main>
 
-      <div class="project vertical">
-        <div style="position:relative; width:100%; padding-top: 177.77%;">
-          <iframe loading="lazy" title="Webtoon Promotion"
-            src="https://play.gumlet.io/embed/6aa03007aa489a4399e3d77a?"
-            referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
-          </iframe>
-        </div>
-        <div class="project-info" style="margin-top: 10px;">
-          <span class="project-title" style="font-weight: bold;">Move LA</span>
-          <span class="project-desc">
-            Editing <br>
-            Transit Advocacy with the California State Transportation Agency
-          </span>
-        </div>
-      </div>
-   
-      <div class="project vertical">
-        <div style="position:relative; width:100%; padding-top: 177.77%;">
-          <iframe loading="lazy" title="Santa Monica Forward"
-            src="https://play.gumlet.io/embed/6aa032ffaa4fda34667c0a1b"
-            referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
-          </iframe>
-        </div>
-        <div class="project-info" style="margin-top: 10px;">
-          <span class="project-title" style="font-weight: bold;">Hayden AI</span>
-          <span class="project-desc">
-            Editing<br>
-            Social Cutdowns
-          </span>
-        </div>
-      </div>
-
-         <div class="project vertical">
-<div style="position:relative;aspect-ratio:9/16;">
-      <iframe
-            loading="lazy" title="Gumlet video player"
-            src="https://play.gumlet.io/embed/69d67d2279cd218090e55871?background=false&autoplay=false&loop=false&disable_player_controls=false"
-            style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
-          referrerpolicy="origin"
-          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;clipboard-write;">
-          </iframe>
-
-          
-    </div>
-        <div class="project-info" style="margin-top: 10px;">
-          <span class="project-title" style="font-weight: bold;">Streets For All | NRDC</span>
-          <span class="project-desc">
-            Editing | Graphics<br>
-            Local Project Advocacy
-          </span>
-        </div>
-      </div>
-
-      <div class="project vertical">
-        <div style="position:relative; width:100%; padding-top: 177.77%;">
-          <iframe loading="lazy" title="Webtoon Promotion"
-            src="https://play.gumlet.io/embed/69827d07924a60df4b84cbd4?background=false&autoplay=false&loop=false&disableControls=false"
-            referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
-          </iframe>
-        </div>
-        <div class="project-info" style="margin-top: 10px;">
-          <span class="project-title" style="font-weight: bold;">Webtoon</span>
-          <span class="project-desc">
-            Editing | Motion Graphics<br>
-            Promotion of the Creator Residency Program
-          </span>
-        </div>
-      </div>
-
-   
-      <div class="project vertical">
-        <div style="position:relative; width:100%; padding-top: 177.77%;">
-          <iframe loading="lazy" title="Santa Monica Forward"
-            src="https://play.gumlet.io/embed/69828b4a4db88a967fb5aeb9?background=false&autoplay=false&loop=false&disableControls=false"
-            referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
-          </iframe>
-        </div>
-        <div class="project-info" style="margin-top: 10px;">
-          <span class="project-title" style="font-weight: bold;">Santa Monica Forward</span>
-          <span class="project-desc">
-            Creative Direction | Editing<br>
-            Social Media Campaign to promote a local advocacy organization
-          </span>
-        </div>
-      </div>
-
-
-
-      <div class="project vertical">
-        <div style="position:relative; width:100%; padding-top: 177.77%;">
-          <iframe loading="lazy" title="Big Blue Bus"
-            src="https://play.gumlet.io/embed/69827e7e924a60df4b84f4e8?background=false&autoplay=false&loop=false&disableControls=false"
-            referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
-          </iframe>
-        </div>
-        <div class="project-info" style="margin-top: 10px;">
-          <span class="project-title" style="font-weight: bold;">Big Blue Bus</span>
-          <span class="project-desc">
-            Creative Direction | Editing<br>
-            Celebrating Bike Month 2025
-          </span>
-        </div>
-      </div>
-
-      <div class="project vertical">
-        <div style="position:relative; width:100%; padding-top: 177.77%;">
-          <iframe loading="lazy" title="Bubba Fish"
-            src="https://play.gumlet.io/embed/698299f84db88a967fb73e7d?background=false&autoplay=false&loop=false&disableControls=false"
-            referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
-          </iframe>
-        </div>
-        <div class="project-info" style="margin-top: 10px;">
-          <span class="project-title" style="font-weight: bold;">Bubba Fish for City Council</span>
-          <span class="project-desc">
-             Editing<br>
-            Social Media Campaign for the 2024 Election
-          </span>
-        </div>
-      </div>
-
-
-      <div class="project vertical">
-        <div style="position:relative; width:100%; padding-top: 177.77%;">
-          <iframe loading="lazy" title="Lumos Partnership"
-            src="https://play.gumlet.io/embed/69828d17924a60df4b86816c?background=false&autoplay=false&loop=false&disableControls=false"
-            referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
-          </iframe>
-        </div>
-        <div class="project-info" style="margin-top: 10px;">
-          <span class="project-title" style="font-weight: bold;">Lumos</span>
-          <span class="project-desc">
-            Creative Direction | Editing<br>
-            Social Media Partnership
-          </span>
-        </div>
-      </div>
-
-         <div class="project horizontal">
-        <div style="position:relative; width:100%; padding-top: 56.25%;">
-          <iframe loading="lazy" title="Paramount - Sonic"
-            src="https://play.gumlet.io/embed/69827d07742559dc5aa5b4ae?background=false&autoplay=false&loop=false&disableControls=false"
-            referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
-          </iframe>
-        </div>
-        <div class="project-info" style="margin-top: 10px;">
-          <span class="project-title" style="font-weight: bold;">Paramount Studios</span>
-          <span class="project-desc">
-            Editing | Motion Graphics<br>
-            Promotion of the Sonic the Hedgehog movies.
-          </span>
-        </div>
-      </div>
-
-
-
-      <div class="project horizontal">
-        <div style="position:relative; width:100%; padding-top: 56.25%;">
-          <iframe loading="lazy" title="Paramount - Sonic"
-            src="https://play.gumlet.io/embed/6982a0d84db88a967fb7f607?background=false&autoplay=false&loop=false&disableControls=false"
-            referrerpolicy="origin" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
-          </iframe>
-        </div>
-        <div class="project-info" style="margin-top: 10px;">
-          <span class="project-title" style="font-weight: bold;">GoSaMo</span>
-          <span class="project-desc">
-            Motion Graphics<br>
-          Transportation Options Awareness for News Employees
-          </span>
-        </div>
-      </div>
-
-
-    </div>
-  </div>
-  
-  <footer>
-    <div class="footer-line"></div>
-    <p>© 2026 Caro Vilain</p>
+  <footer class="site-footer">
+    <span>© 2026 Caro Vilain</span>
+    <span>
+      <a href="mailto:contact@carovilain.com">Email</a>
+      <a href="https://www.linkedin.com/in/caro-vilain-037748b7">LinkedIn</a>
+    </span>
   </footer>
+
+  <script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.getElementById('site-nav');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !isOpen);
+    siteNav.classList.toggle('nav-open');
+  });
+</script>
+
 </body>
 </html>

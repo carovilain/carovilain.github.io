@@ -2,61 +2,84 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5P8RHDNV4W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5P8RHDNV4W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-5P8RHDNV4W');
-</script>
+    gtag('config', 'G-5P8RHDNV4W');
+  </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Caro Vilain</title>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600&display=swap">
+  
   <link rel="stylesheet" href="style.css">
-
 </head>
-<body>
+<body class="page-about">
 
-<a href="index.html" class="sticky-name">Caro Vilain</a>
-  <nav style="display: block; position: relative;">
+<header class="site-header">
+  <a class="wordmark" href="index.html">Caro Vilain</a>
+  
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span class="hamburger"></span>
+  </button>
+
+  <nav id="site-nav" aria-label="Main">
     <a href="index.html">About</a>
     <a href="portfolio.html">Work</a>
     <a href="appearances.html">Appearances</a>
     <a href="contact.html">Contact</a>
   </nav>
-  
-  <div class="content">
-    <h1>About</h1>
-  <br>
+</header>
 
-   
-    <div class="bio-text">
-        <p>Caro is a Visual Storyteller & Mobility Advocate based in Santa Monica, CA. Through her extensive knowledge of video editing and storytelling, she has worked on campaigns for clients including Paramount Studios, Netflix, DreamWorks, LA28, and Sony.</p>
-        <p>Living car-free in Los Angeles, she developed a passion for mobility advocacy and the many issues it intersects with, and she now uses her skills to amplify the messages of advocacy organizations such as Streets For All, Move LA, and others.</p>
-        <p>Using her background in brand marketing, Caro has also been creating create content for companies whose mission aligns with her passion for livable cities, including Hayden AI, Lumos Helmets, Big Blue Bus, Wombi,…</p>
-    <p style="margin-top: 20px;">
-  <strong>Got some exciting projects you’d like to collaborate on? <a href="contact.html" style="text-decoration: underline;">Get in touch.</a></strong>
-</p> 
-    
+<main>
+  <!-- Yellow outer circle, Teal middle circle, Sticky photo container in center -->
+  <div class="circle-yellow-outer">
+    <div class="circle-teal-middle">
+      <div class="circle-photo-inner">
+        <img src="images/About Pic 01.png" alt="Caro Vilain" class="bio-pic">
+      </div>
     </div>
-
-    
-      <div class="about-container">
-      <img src="images/About Pic 01.png" alt="Caro Vilain" class="bio-pic">
- 
-    </div>
-
   </div>
-  <footer>
-    <div class="footer-line"></div>
-    <p>© 2026 Caro Vilain</p>
-    <div class="footer-links">
-      <a href="mailto:carovilain@icloud.com">Email</a>
-      <a href="https://www.linkedin.com/in/caro-vilain-037748b7" target="_blank">LinkedIn</a>
-    </div>
-  </footer>
 
-</body> </html>
+  <div class="content about-content">
+    <h1>About</h1>
+    
+    <div class="bio-text">
+      <p>Caro is a Visual Storyteller & Mobility Advocate based in Santa Monica, CA. Through her extensive knowledge of video editing and storytelling, she has worked on campaigns for clients including Paramount Studios, Netflix, DreamWorks, LA28, and Sony.</p>
+      <p>Living car-free in Los Angeles, she developed a passion for mobility advocacy and the many issues it intersects with, and she now uses her skills to amplify the messages of advocacy organizations such as Streets For All, Move LA, and others.</p>
+      <p>Using her background in brand marketing, Caro has also been creating content for companies whose mission aligns with her passion for livable cities, including Hayden AI, Lumos Helmets, Big Blue Bus, Wombi,…</p>
+      <p style="margin-top: 20px;">
+        <strong>Got some exciting projects you’d like to collaborate on? <a href="contact.html" style="text-decoration: underline;">Get in touch.</a></strong>
+      </p> 
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Caro Vilain</span>
+  <span>
+    <a href="mailto:contact@carovilain.com">Email</a>
+    <a href="https://www.linkedin.com/in/caro-vilain-037748b7" target="_blank" rel="noopener">LinkedIn</a>
+  </span>
+</footer>
+
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.getElementById('site-nav');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !isOpen);
+    siteNav.classList.toggle('nav-open');
+  });
+</script>
+
+</body>
+</html>
