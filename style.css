@@ -337,6 +337,7 @@ body.page-about .about-content {
 body.page-about .about-content h1 {
   margin: 0 0 0.5rem;
   font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 3vw;
   line-height: 1.1;
   color: var(--text);
 }
@@ -357,16 +358,16 @@ body.page-about .about-content h1 {
 
 .circle-yellow-outer {
   flex: none;
-  --d: min(75vw, 320px);
+  --d: min(85vw, 360px);
   width: var(--d);
   aspect-ratio: 1;
   border-radius: 50%;
   background-color: var(--yellow);
   display: grid;
   place-items: center;
-  transform: translateY(5px);
+  transform: translateY(135px);
   margin-top: 4%;
-  margin-bottom: 8%;
+  margin-bottom: 20vw;
 }
 
 .circle-teal-middle {
