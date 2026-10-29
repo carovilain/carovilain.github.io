@@ -48,6 +48,9 @@ body.page-appearances .appearance-section h1,
 /* ==========================================================================
    2. Global Header & Navigation
    ========================================================================== */
+/* ==========================================================================
+   2. Global Header & Navigation
+   ========================================================================== */
 .site-header {
   position: fixed;
   top: 0;
@@ -61,9 +64,8 @@ body.page-appearances .appearance-section h1,
   justify-content: space-between;
   gap: 0.25rem 2rem;
   padding: 0.75rem 3vw;
-  background-color: transparent;
+  background-color: var(--bg-color); /* Applies solid white background globally */
 }
-
 body.page-portfolio .site-header {
   background-color: var(--bg-color);
 }
