@@ -15,34 +15,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Caro Vilain</title>
   
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Momo+Trust+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Momo+Trust+Display&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Portfolio Protected Image Container & Scaling Rules */
+    .protected-image-container {
+      width: 100%;
+      max-width: 100%;
+      margin: 4rem auto 2rem;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .protected-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      pointer-events: none;
+      -webkit-user-drag: none;
+    }
+  </style>
 </head>
 <body class="page-portfolio">
-  <!-- Circles -->
-<!-- Background circles for Portfolio page -->
-<div class="bg-circle-static-blue">
-  <div class="bg-circle-inner-green"></div>
-</div>
+  <!-- Background circles for Portfolio page -->
+  <div class="bg-circle-static-blue">
+    <div class="bg-circle-inner-green"></div>
+  </div>
   <div class="bg-circle-static-yellow"></div>
 
-<header class="site-header">
-  <a class="wordmark" href="index.html">Caro Vilain</a>
-  
-  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-    <span class="hamburger"></span>
-  </button>
+  <header class="site-header">
+    <a class="wordmark" href="index.html">Caro Vilain</a>
+    
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
 
-  <nav id="site-nav" aria-label="Main">
-    <a href="index.html">About</a>
-    <a href="portfolio.html">Work</a>
-    <a href="appearances.html">Appearances</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+    <nav id="site-nav" aria-label="Main">
+      <a href="index.html">About</a>
+      <a href="portfolio.html">Work</a>
+      <a href="appearances.html">Appearances</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <main>
     <div class="content">
@@ -115,7 +134,7 @@
           </div>
         </div>
 
-          <div class="project vertical">
+        <div class="project vertical">
           <div style="position:relative; width:100%; padding-top: 177.77%;">
             <iframe loading="lazy" title="Santa Monica Forward"
               src="https://play.gumlet.io/embed/6ae3d69134bee2c4e8246346?background=false&autoplay=false&loop=false&disable_player_controls=false"
@@ -126,7 +145,7 @@
             <span class="project-title">Thomas Aujero Small</span>
             <span class="project-desc">
               Production | Editing<br>
-              Local Election Campgian
+              Local Election Campaign
             </span>
           </div>
         </div>
@@ -146,7 +165,6 @@
             </span>
           </div>
         </div>
-
 
         <div class="project vertical">
           <div style="position:relative; width:100%; padding-top: 177.77%;">
@@ -196,7 +214,7 @@
           </div>
         </div>
 
-                <div class="project vertical">
+        <div class="project vertical">
           <div style="position:relative; width:100%; padding-top: 177.77%;">
             <iframe loading="lazy" title="Webtoon Promotion"
               src="https://play.gumlet.io/embed/69827d07924a60df4b84cbd4?background=false&autoplay=false&loop=false&disableControls=false"
@@ -211,7 +229,6 @@
             </span>
           </div>
         </div>
-
 
         <div class="project horizontal">
           <div style="position:relative; width:100%; padding-top: 56.25%;">
@@ -245,8 +262,21 @@
           </div>
         </div>
 
+      </div><!-- End of portfolio-grid -->
+<div class="portfolio-grid">
+        <!-- (All your existing video projects remain here) -->
+      </div><!-- End of portfolio-grid -->
+
+      <!-- Protected Portfolio Graphic matching grid width with a matching title -->
+      <div class="protected-image-container" style="margin-top: 4rem;">
+        <div class="project-info" style="margin-bottom: 15px; margin-top: 0;">
+          <span class="project-title">Static Design</span>
+      
+        </div>
+        <img src="https://raw.githubusercontent.com/carovilain/carovilain.github.io/0e883fe84a2ab9fa4f2a14b2c24b404ffc2a5020/images/Website%20GFX%20Board%20-%20v2.jpg" alt="Portfolio graphic" class="protected-image" draggable="false">
       </div>
-    </div>
+
+    </div><!-- End of content -->
   </main>
 
   <footer class="site-footer">
@@ -258,33 +288,31 @@
   </footer>
 
   <script>
-  const navToggle = document.querySelector('.nav-toggle');
-  const siteNav = document.getElementById('site-nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    const siteNav = document.getElementById('site-nav');
 
-  navToggle.addEventListener('click', () => {
-    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', !isOpen);
-    siteNav.classList.toggle('nav-open');
-  });
-</script>
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isOpen);
+      siteNav.classList.toggle('nav-open');
+    });
+  </script>
 
-<script>
-  window.addEventListener('scroll', () => {
-    const innerCircle = document.querySelector('.bg-circle-inner-green');
-    if (!innerCircle) return;
-    
-    const scrollPosition = window.pageYOffset;
-    
-    // Reversed formula: starts smaller (0.85) and scales up as you scroll down
-    // Adjust 0.0003 to control how fast it grows
-    let scale = 0.85 + (scrollPosition * 0.0003);
-    
-    // Clamp the scale between a minimum size (0.85) and maximum size (1.15) 
-    // so it never exceeds the boundaries of the blue circle
-    scale = Math.max(0.85, Math.min(1.05, scale));
-    
-    innerCircle.style.transform = `scale(${scale})`;
-  });
-</script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const innerCircle = document.querySelector('.bg-circle-inner-green');
+      if (!innerCircle) return;
+      
+      const scrollPosition = window.pageYOffset;
+      
+      // Reversed formula: starts smaller (0.85) and scales up as you scroll down
+      let scale = 0.85 + (scrollPosition * 0.0003);
+      
+      // Clamp the scale between 0.85 and 1.05 so it stays safely inside the blue container
+      scale = Math.max(0.85, Math.min(1.05, scale));
+      
+      innerCircle.style.transform = `scale(${scale})`;
+    });
+  </script>
 </body>
 </html>

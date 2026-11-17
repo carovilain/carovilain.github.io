@@ -756,3 +756,21 @@ main {
     pointer-events: auto;
   }
 }
+
+/* ---------- Protected Non-Clickable Image (Grid Width Match) ---------- */
+.protected-image-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 4rem auto 2rem;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.protected-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
